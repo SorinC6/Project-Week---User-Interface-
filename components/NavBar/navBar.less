@@ -1,0 +1,121 @@
+header {
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: grey;
+        padding: 15px 30px;
+        position: fixed;
+        width: 100%;
+        z-index: 1; //top:0;
+        a {
+            padding-left: 60px;
+            text-decoration: none;
+            color: white;
+
+            @media (max-width:500px){
+                display:none;
+            }
+        }
+
+    
+        button {
+            margin-right: 60px;
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none; //outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            outline: none;
+            &:hover {
+                background-color: #3e8e41
+            }
+            &:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+        }
+        img {
+            width: 30px;
+            height: 20px;
+            transition: all 0.3s ease-in-out 0s;
+            &:hover {
+                cursor: default;
+                transform: rotate(360deg);
+                transition: all 0.8s ease-in-out 0s;
+            }
+        }
+    }
+    #headerImg {
+        margin-top: 20px;
+        width: 100%;
+        height: 250px;
+
+        @media (max-width:500px){
+            display:none;
+        }
+    }
+}
+
+//===================TRANSPARENT MENU- HAMBURGER MENU====
+.transparent {
+    display: none;
+    /* Ascundere */
+    position: fixed;
+    /* Fixare */
+    left: 0;
+    /* Distanta fata de partea stanga */
+    top: 0;
+    /* Distanta fata de partea de sus */
+    width: 100%;
+    /* Latime totala */
+    height: 300%;
+    /* Inaltime totala */
+    overflow: auto;
+    /* Scroll daca e nevoie */
+    background-color: grey;
+    opacity: 0.97;
+    z-index: 3;
+    .expandedTab {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 30px;
+        align-items: baseline;
+        h2 {
+            font-weight: bold;
+            font-size: 25px;
+            color: white;
+        }
+        div {
+            font-weight: bold;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.expandedText {
+    display: flex; //justify-content: center;
+    align-items: center;
+    flex-direction: column; //margin-bottom: 400px;
+    cursor: pointer;
+    p {
+        font-weight: bold;
+        font-size: 64px;
+        line-height: 0.5;
+        color: white;
+    }
+    p:hover {
+        color: purple;
+    }
+}
+
+//=========================Animation in GASP=======

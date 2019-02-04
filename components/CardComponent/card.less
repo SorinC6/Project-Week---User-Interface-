@@ -1,0 +1,354 @@
+//===========================STAR RATING ================
+.rate {
+    float: right;
+    height: 46px;
+    padding: 0 10px;
+    left: 0;
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rate>input:checked~label {
+    color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #c59b08;
+}
+
+
+.container {
+    font-size: 1.6rem;
+    max-width: 950px;
+    margin: 0 auto; //border:1px solid red;
+    .cards-container {
+        padding-top:50px; 
+        padding-bottom: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media (max-width:500px){
+            max-width:90%;
+            margin:0 auto;
+            padding-top:30px;
+        }
+        .card-holder {
+            display:flex;
+            //flex-direction: column;
+            margin-bottom: 30px;
+            @media (max-width:500px){
+                display: flex;
+                flex-direction: column;
+            }
+            .card {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                max-width: 450px;
+                border: 1px solid black;
+                box-shadow: 10px 8px 10px grey;
+                .content-one {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+                    img {
+                        //padding:10px 20px;
+                        max-width: 150px;
+                        height: 250px;
+                        padding: 10px;
+                       
+                    }
+                    .share-buttons {
+                        margin-left: 10px;
+                        img {
+                            width: 20px;
+                            height: 20px;
+                            padding: 2px;
+                        }
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                    .button_cont {
+                        margin-left: 20px;
+                        ;
+                    }
+                    .buy-button {
+                        color: #fff;
+                        text-transform: uppercase;
+                        background: #434343;
+                        padding: 10px;
+                        font-size: 15px;
+                        border-radius: 2px;
+                        text-decoration: none; //display: inline-block;
+                        border: none;
+                        &:hover {
+                            background: red;
+                            letter-spacing: 1px;
+                            -webkit-box-shadow: 0px 5px 30px -10px rgba(0, 0, 0, 0.57);
+                            -moz-box-shadow: 0px 5px 20px -10px rgba(0, 0, 0, 0.57);
+                            box-shadow: 5px 10px -10px rgba(0, 0, 0, 0.57);
+                            transition: all 0.4s ease 0s;
+                        }
+                    }
+                }
+                .content-two {
+                    padding: 0px; // border:1px solid red;
+                    h2 {
+                        font-size: 18px;
+                        line-height: 1.2;
+                        margin-bottom: 3px;
+                    }
+                    h3 {
+                        font-size: 15px;
+                        margin-top: 0px;
+                        margin-bottom: 4px;
+                    }
+                    p {
+                        margin-left: 20px;
+                        font-size: 14px;
+                        align-items: center;
+                        @media (max-width:500px){
+                            margin-left:5px;
+                        }
+                    }
+                    hr {
+                        width: 70%;
+                    }
+                    .rating-review {
+                        display: flex;
+                        input {
+                            border: 0;
+                            width: 40px;
+                            padding-right: 2px;
+                            text-align: center;
+                        }
+                        #ratings {
+                            border-right: 1px solid black;
+                        }
+                        #reviews {
+                            max-width: 10px;
+                        }
+                    }
+                    .wishlist {
+                        //color:red;
+                        cursor: pointer;
+                        span {
+                            color: purple;
+                            font-size: 25px;
+                        }
+                    }
+                    .choose-buyer{
+                        display:flex;
+                        flex-direction: column;
+                        height: 100px;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        input{
+                            width:30px;
+                            
+                        }
+                    }
+
+                }
+                .button-overview {
+                    position: absolute;
+                    display: flex;
+                    flex-wrap: wrap; // width: 15px;
+                    height: 120px;
+                    width: 20px;
+                    float: left;
+                    top: 40%; //left: 50%;
+                    right: 0; //transform: translate(-50%, -50%);
+                    padding: 10px;
+                    align-items: center;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    outline: none;
+                    &:hover{
+                        color:white;
+                        background: black;
+                    }
+                }
+                .button-reviews{
+                    position:absolute;
+                    color:red;
+                    bottom: 0;
+                    left:50%;
+                    padding:5px 50px;
+                    font-size: 13px;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    outline: none;
+                    &:hover{
+                        color:white;
+                        background: black;
+                    }
+                }
+          
+            }
+            .card-about{
+                //display:none;
+                position: relative;
+                width:45%;
+                padding:40px;
+                font-size:20px;
+                @media (max-width:500px){
+                    width:80%;
+                }
+                button{
+                    display:flex;
+                    flex-wrap: wrap;
+                    position: absolute;
+                    float: left;
+                    top: 40%; //left: 50%;
+                    right: 0; //transform: translate(-50%, -50%);
+                    width:20px;
+                    padding:10px;
+                    border-radius: 5px;
+                    &:hover{
+                        color:white;
+                        background: black;
+                    }
+                }
+            }
+        }
+        .review-content{
+            //display:none;
+            //color:red;
+            padding:0 10px;
+            width:80%;
+            padding-bottom:20px;
+            //margin:0 auto;
+            font-size:20px;
+            .review-close{
+                padding: 1%;
+                width: 15%;
+                width:100px;
+                background-color: rgb(160, 1, 30);
+                border: 1px solid white;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                &:hover {
+                  background-color: white;
+                  border: 1px solid rgb(160, 1, 30);
+                  color: rgb(160, 1, 30);
+                }
+              }
+            }
+        }
+       
+    }
+
+
+.card-about-close{
+    display:none;
+}
+.review-open{
+    display:none;
+}
+
+
+//========================ARTICLE FORM ====
+
+.articleForm {
+    margin:0;
+    form {
+      display: flex;
+
+      input[type=text], textarea {
+        padding: 1.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 0.5rem 0 1.5rem;
+        resize: vertical;
+        margin-right:30px;
+      }
+
+      textarea{
+          max-width:400px;
+      }
+    
+      input[type=text] {
+        width: 30%;
+      }
+      
+  
+    }
+    #submitBtn {
+        padding: 2%;
+        width: 55%;
+        background-color: rgb(160, 1, 30);
+        border: 1px solid white;
+        color: white;
+        border-radius: 5px;
+        margin-right:20px;
+        cursor: pointer;
+        &:hover {
+          background-color: white;
+          border: 1px solid rgb(160, 1, 30);
+          color: rgb(160, 1, 30);
+        }
+      }
+  }
+
+  .buttons-review{
+      width:70%;
+      display: flex;
+      justify-content: space-evenly;
+      margin-left:0;
+  }
+
+
+
+  .review-text{
+      padding:5px 20px;
+      border-bottom:1px solid black;
+      //margin-bottom:30px;
+      h2{
+          font-size:15px;
+          margin-bottom: 5px;
+      }
+      h5{
+          margin:0;
+          font-size:12px; 
+          border-bottom:1px dashed black;
+          margin-bottom:10px;
+      }
+      hr{
+          width:80%;
+      }
+     .rev-text{
+         font-size:13px;
+     }
+      
+  }
