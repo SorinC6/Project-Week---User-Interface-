@@ -269,6 +269,13 @@ header #headerImg {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .container .cards-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+}
 .container .cards-container .card-holder {
   display: flex;
   margin-bottom: 30px;
