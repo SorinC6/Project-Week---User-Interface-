@@ -280,6 +280,12 @@ header #headerImg {
   display: flex;
   margin-bottom: 30px;
 }
+@media (max-width: 500px) {
+  .container .cards-container .card-holder {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .container .cards-container .card-holder .card {
   position: relative;
   display: flex;
@@ -348,6 +354,11 @@ header #headerImg {
   font-size: 14px;
   align-items: center;
 }
+@media (max-width: 500px) {
+  .container .cards-container .card-holder .card .content-two p {
+    margin-left: 5px;
+  }
+}
 .container .cards-container .card-holder .card .content-two hr {
   width: 70%;
 }
@@ -364,7 +375,7 @@ header #headerImg {
   border-right: 1px solid black;
 }
 .container .cards-container .card-holder .card .content-two .rating-review #reviews {
-  width: 20px;
+  max-width: 10px;
 }
 .container .cards-container .card-holder .card .content-two .wishlist {
   cursor: pointer;
@@ -372,6 +383,16 @@ header #headerImg {
 .container .cards-container .card-holder .card .content-two .wishlist span {
   color: purple;
   font-size: 25px;
+}
+.container .cards-container .card-holder .card .content-two .choose-buyer {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .cards-container .card-holder .card .content-two .choose-buyer input {
+  width: 30px;
 }
 .container .cards-container .card-holder .card .button-overview {
   position: absolute;
@@ -412,6 +433,11 @@ header #headerImg {
   width: 45%;
   padding: 40px;
   font-size: 20px;
+}
+@media (max-width: 500px) {
+  .container .cards-container .card-holder .card-about {
+    width: 80%;
+  }
 }
 .container .cards-container .card-holder .card-about button {
   display: flex;
@@ -530,7 +556,6 @@ header #headerImg {
 @media (max-width: 500px) {
   .footer-content {
     flex-direction: column;
-    padding: 20px 40px;
   }
 }
 .footer-content .content {
