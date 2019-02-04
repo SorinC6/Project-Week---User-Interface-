@@ -375,6 +375,16 @@ header #headerImg {
   color: white;
   background: black;
 }
+.container .cards-container .review-content {
+  display: block;
+  padding: 0 10px;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 20px;
+}
 .card-about-close {
   display: none;
+}
+.review-open {
+  display: block;
 }
