@@ -19,8 +19,8 @@ class Book {
         this.expandButton.addEventListener('click', () => this.expand());
         this.closeButton.addEventListener('click', () => this.close())
         
-        this.expandReview.addEventListener('click', () => this.expandReview());
-        this.closeReviews.addEventListener('click', () => this.closeReviews());
+        this.expandReview.addEventListener('click', () => this.expandRev());
+        this.closeReviews.addEventListener('click', () => this.closeRev());
 
     }
 
@@ -43,15 +43,23 @@ class Book {
         this.about.classList.toggle('card-about-close');
     }
 
-    expandReview() {
+    expandRev() {
         console.log('expand');
+        // books.forEach(item=>{
+        //     const contentRev=item.querySelector('.review-Content');
+        //     contentRev.classList.add('review-open')
+
+        // })
+        const content=this.domElement.querySelector('.review-content');
+        console.log(content);
+        content.classList.toggle('review-open');
     }
-    closeReviews() {
+    closeRev() {
         console.log('close');
     }
 }
 
-const books = document.querySelectorAll('.card-holder');
+const books = document.querySelectorAll('.card-holder2');
 books.forEach(item => {
     return new Book(item);
 })

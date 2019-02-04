@@ -232,7 +232,7 @@ header #headerImg {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 450px;
+  max-width: 450px;
   border: 1px solid black;
   box-shadow: 10px 8px 10px grey;
 }
@@ -376,7 +376,6 @@ header #headerImg {
   background: black;
 }
 .container .cards-container .review-content {
-  display: block;
   padding: 0 10px;
   width: 80%;
   margin: 0 auto;
@@ -386,5 +385,5 @@ header #headerImg {
   display: none;
 }
 .review-open {
-  display: block;
+  display: none;
 }

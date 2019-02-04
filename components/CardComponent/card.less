@@ -53,12 +53,13 @@
         justify-content: space-between;
         .card-holder {
             display:flex;
+            //flex-direction: column;
             margin-bottom: 30px;
             .card {
                 position: relative;
                 display: flex;
                 justify-content: center;
-                width: 450px;
+                max-width: 450px;
                 border: 1px solid black;
                 box-shadow: 10px 8px 10px grey;
                 .content-one {
@@ -209,20 +210,21 @@
             }
         }
         .review-content{
-            display:block;
+            //display:none;
             //color:red;
             padding:0 10px;
             width:80%;
             margin:0 auto;
             font-size:20px;
         }
+       
     }
 }
 
 .card-about-close{
     display:none;
 }
-
 .review-open{
-    display:block;
+    display:none;
 }
+
