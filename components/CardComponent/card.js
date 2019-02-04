@@ -5,13 +5,23 @@ class Book {
         this.domElement = domElement;
         //console.log(this.domElement);
 
+        //Expand OVERVIEW BUTTONS
         this.expandButton = domElement.querySelector('.button-overview');
         this.closeButton = domElement.querySelector('.btn-close-about');
+
+        //EXAPND REVIEW BUTTONS
+        this.expandReview = domElement.querySelector('.button-reviews');
+        this.closeReviews = domElement.querySelector('.review-close');
+
 
         this.about = domElement.querySelector('.card-about');
 
         this.expandButton.addEventListener('click', () => this.expand());
         this.closeButton.addEventListener('click', () => this.close())
+        
+        this.expandReview.addEventListener('click', () => this.expandReview());
+        this.closeReviews.addEventListener('click', () => this.closeReviews());
+
     }
 
     expand() {
@@ -31,6 +41,13 @@ class Book {
     }
     close() {
         this.about.classList.toggle('card-about-close');
+    }
+
+    expandReview() {
+        console.log('expand');
+    }
+    closeReviews() {
+        console.log('close');
     }
 }
 
