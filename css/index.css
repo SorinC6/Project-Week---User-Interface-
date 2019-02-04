@@ -221,6 +221,7 @@ header #headerImg {
 }
 .container .cards-container {
   padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -345,6 +346,7 @@ header #headerImg {
   position: absolute;
   color: red;
   bottom: 0;
+  left: 50%;
   padding: 5px 50px;
   font-size: 13px;
   border-top-left-radius: 10px;
@@ -379,6 +381,7 @@ header #headerImg {
 .container .cards-container .review-content {
   padding: 0 10px;
   width: 80%;
+  padding-bottom: 20px;
   font-size: 20px;
 }
 .container .cards-container .review-content .review-close {
@@ -418,18 +421,19 @@ header #headerImg {
   margin-right: 30px;
 }
 .articleForm form textarea {
-  width: 400px;
+  max-width: 400px;
 }
 .articleForm form input[type=text] {
   width: 30%;
 }
 .articleForm #submitBtn {
-  padding: 1%;
-  width: 15%;
+  padding: 2%;
+  width: 55%;
   background-color: #a0011e;
   border: 1px solid white;
   color: white;
   border-radius: 5px;
+  margin-right: 20px;
   cursor: pointer;
 }
 .articleForm #submitBtn:hover {
@@ -438,8 +442,10 @@ header #headerImg {
   color: #a0011e;
 }
 .buttons-review {
+  width: 70%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin-left: 0;
 }
 .review-text {
   padding: 5px 20px;
@@ -457,4 +463,60 @@ header #headerImg {
 }
 .review-text hr {
   width: 80%;
+}
+.review-text .rev-text {
+  font-size: 13px;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 10px 80px;
+  margin-top: 70px;
+  background: grey;
+  position: relative;
+  padding-bottom: 30px;
+}
+@media (max-width: 500px) {
+  .footer-content {
+    flex-direction: column;
+    padding: 20px 40px;
+  }
+}
+.footer-content .content {
+  margin: 0px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media (max-width: 500px) {
+  .footer-content .content {
+    justify-content: flex-start;
+  }
+}
+.footer-content h3 {
+  font-weight: regular;
+  font-size: 20px;
+  line-height: 4px;
+  color: white;
+}
+.footer-content input {
+  padding: 10px 25px;
+  font-size: 14px;
+  color: grey;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+.footer-content p {
+  font-weight: regular;
+  font-size: 14px;
+  line-height: 6px;
+  color: #ffffff;
+}
+.footer-content .copyright {
+  margin-top: 30px;
+  color: black;
+  position: absolute;
+  bottom: 0;
 }

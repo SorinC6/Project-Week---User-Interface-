@@ -49,6 +49,7 @@
     margin: 0 auto; //border:1px solid red;
     .cards-container {
         padding-top:50px; 
+        padding-bottom: 50px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -175,6 +176,7 @@
                     position:absolute;
                     color:red;
                     bottom: 0;
+                    left:50%;
                     padding:5px 50px;
                     font-size: 13px;
                     border-top-left-radius: 10px;
@@ -215,6 +217,7 @@
             //color:red;
             padding:0 10px;
             width:80%;
+            padding-bottom:20px;
             //margin:0 auto;
             font-size:20px;
             .review-close{
@@ -263,7 +266,7 @@
       }
 
       textarea{
-          width:400px;
+          max-width:400px;
       }
     
       input[type=text] {
@@ -273,12 +276,13 @@
   
     }
     #submitBtn {
-        padding: 1%;
-        width: 15%;
+        padding: 2%;
+        width: 55%;
         background-color: rgb(160, 1, 30);
         border: 1px solid white;
         color: white;
         border-radius: 5px;
+        margin-right:20px;
         cursor: pointer;
         &:hover {
           background-color: white;
@@ -289,8 +293,10 @@
   }
 
   .buttons-review{
+      width:70%;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
+      margin-left:0;
   }
 
 
@@ -298,7 +304,7 @@
   .review-text{
       padding:5px 20px;
       border-bottom:1px solid black;
-
+      //margin-bottom:30px;
       h2{
           font-size:15px;
           margin-bottom: 5px;
@@ -312,5 +318,8 @@
       hr{
           width:80%;
       }
+     .rev-text{
+         font-size:13px;
+     }
       
   }

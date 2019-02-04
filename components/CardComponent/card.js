@@ -75,8 +75,13 @@ class Book {
         //newDiv.textContent = text;
         reviewDiv.appendChild(newDiv)
 
+        const newSpan=document.createElement('span');
+        newSpan.textContent="From:";
+        newSpan.className='rev-h2';
 
         const newName = document.createElement('h2');
+        //newName.appendChild(newSpan);
+
         newName.className = 'rev-h2';
         newName.textContent = nameField.value;
         const newSUbject = document.createElement('p');
