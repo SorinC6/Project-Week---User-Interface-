@@ -1,0 +1,110 @@
+.width-100 {
+  width: 100%;
+}
+.border-bottom-grey {
+  border-bottom: 1px solid lightgrey;
+}
+header .nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: grey;
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+header .nav-content a {
+  padding-left: 60px;
+  text-decoration: none;
+  color: white;
+}
+header .nav-content button {
+  margin-right: 60px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  outline: none;
+}
+header .nav-content button:hover {
+  background-color: #3e8e41;
+}
+header .nav-content button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+header .nav-content img {
+  width: 30px;
+  height: 20px;
+  transition: all 0.3s ease-in-out 0s;
+}
+header .nav-content img:hover {
+  cursor: default;
+  transform: rotate(360deg);
+  transition: all 0.8s ease-in-out 0s;
+}
+header #headerImg {
+  margin-top: 20px;
+  width: 100%;
+  height: 250px;
+}
+.transparent {
+  display: none;
+  /* Ascundere */
+  position: fixed;
+  /* Fixare */
+  left: 0;
+  /* Distanta fata de partea stanga */
+  top: 0;
+  /* Distanta fata de partea de sus */
+  width: 100%;
+  /* Latime totala */
+  height: 300%;
+  /* Inaltime totala */
+  overflow: auto;
+  /* Scroll daca e nevoie */
+  background-color: grey;
+  opacity: 0.97;
+  z-index: 3;
+}
+.transparent .expandedTab {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  align-items: baseline;
+}
+.transparent .expandedTab h2 {
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+}
+.transparent .expandedTab div {
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+.expandedText {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.expandedText p {
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 0.5;
+  color: white;
+}
+.expandedText p:hover {
+  color: purple;
+}
