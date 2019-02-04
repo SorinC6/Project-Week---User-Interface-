@@ -12,7 +12,7 @@ class Book {
         //EXAPND REVIEW BUTTONS
         this.expandReview = domElement.querySelector('.button-reviews');
         this.closeReviews = domElement.querySelector('.review-close');
-
+        this.contentR=domElement.querySelector('.review-content');
 
         this.about = domElement.querySelector('.card-about');
 
@@ -51,11 +51,12 @@ class Book {
 
         // })
         const content=this.domElement.querySelector('.review-content');
-        console.log(content);
+        //console.log(content);
         content.classList.toggle('review-open');
     }
     closeRev() {
         console.log('close');
+        this.contentR.classList.toggle('review-open');
     }
 }
 
