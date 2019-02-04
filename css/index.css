@@ -178,3 +178,203 @@ header #headerImg {
 .container .search-content div input[type=text]:focus {
   width: 50%;
 }
+.rate {
+  float: right;
+  height: 46px;
+  padding: 0 10px;
+  left: 0;
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+.container {
+  font-size: 1.6rem;
+  max-width: 950px;
+  margin: 0 auto;
+}
+.container .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container .cards-container .card-holder {
+  display: flex;
+  margin-bottom: 30px;
+}
+.container .cards-container .card-holder .card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 450px;
+  border: 1px solid black;
+  box-shadow: 10px 8px 10px grey;
+}
+.container .cards-container .card-holder .card .content-one {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.container .cards-container .card-holder .card .content-one img {
+  max-width: 150px;
+  height: 250px;
+  padding: 10px;
+}
+.container .cards-container .card-holder .card .content-one .share-buttons {
+  margin-left: 10px;
+}
+.container .cards-container .card-holder .card .content-one .share-buttons img {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+}
+.container .cards-container .card-holder .card .content-one .share-buttons a {
+  text-decoration: none;
+}
+.container .cards-container .card-holder .card .content-one .button_cont {
+  margin-left: 20px;
+}
+.container .cards-container .card-holder .card .content-one .buy-button {
+  color: #fff;
+  text-transform: uppercase;
+  background: #434343;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+}
+.container .cards-container .card-holder .card .content-one .buy-button:hover {
+  background: red;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 30px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 20px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 10px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+.container .cards-container .card-holder .card .content-two {
+  padding: 0px;
+}
+.container .cards-container .card-holder .card .content-two h2 {
+  font-size: 18px;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+.container .cards-container .card-holder .card .content-two h3 {
+  font-size: 15px;
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+.container .cards-container .card-holder .card .content-two p {
+  margin-left: 20px;
+  font-size: 14px;
+  align-items: center;
+}
+.container .cards-container .card-holder .card .content-two hr {
+  width: 70%;
+}
+.container .cards-container .card-holder .card .content-two .rating-review {
+  display: flex;
+}
+.container .cards-container .card-holder .card .content-two .rating-review input {
+  border: 0;
+  width: 40px;
+  padding-right: 2px;
+  text-align: center;
+}
+.container .cards-container .card-holder .card .content-two .rating-review #ratings {
+  border-right: 1px solid black;
+}
+.container .cards-container .card-holder .card .content-two .rating-review #reviews {
+  width: 20px;
+}
+.container .cards-container .card-holder .card .content-two .wishlist {
+  cursor: pointer;
+}
+.container .cards-container .card-holder .card .content-two .wishlist span {
+  color: purple;
+  font-size: 25px;
+}
+.container .cards-container .card-holder .card .button-overview {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  height: 120px;
+  width: 20px;
+  float: left;
+  top: 40%;
+  right: 0;
+  padding: 10px;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  outline: none;
+}
+.container .cards-container .card-holder .card .button-overview:hover {
+  color: white;
+  background: black;
+}
+.container .cards-container .card-holder .card .button-reviews {
+  position: absolute;
+  color: red;
+  bottom: 0;
+  padding: 5px 50px;
+  font-size: 13px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  outline: none;
+}
+.container .cards-container .card-holder .card .button-reviews:hover {
+  color: white;
+  background: black;
+}
+.container .cards-container .card-holder .card-about {
+  position: relative;
+  width: 45%;
+  padding: 40px;
+  font-size: 20px;
+}
+.container .cards-container .card-holder .card-about button {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  float: left;
+  top: 40%;
+  right: 0;
+  width: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.container .cards-container .card-holder .card-about button:hover {
+  color: white;
+  background: black;
+}
+.card-about-close {
+  display: none;
+}

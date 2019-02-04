@@ -1,0 +1,216 @@
+//===========================STAR RATING ================
+.rate {
+    float: right;
+    height: 46px;
+    padding: 0 10px;
+    left: 0;
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rate>input:checked~label {
+    color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #c59b08;
+}
+
+
+.container {
+    font-size: 1.6rem;
+    max-width: 950px;
+    margin: 0 auto; //border:1px solid red;
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .card-holder {
+            display:flex;
+            margin-bottom: 30px;
+            .card {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                width: 450px;
+                border: 1px solid black;
+                box-shadow: 10px 8px 10px grey;
+                .content-one {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+                    img {
+                        //padding:10px 20px;
+                        max-width: 150px;
+                        height: 250px;
+                        padding: 10px;
+                       
+                    }
+                    .share-buttons {
+                        margin-left: 10px;
+                        img {
+                            width: 20px;
+                            height: 20px;
+                            padding: 2px;
+                        }
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                    .button_cont {
+                        margin-left: 20px;
+                        ;
+                    }
+                    .buy-button {
+                        color: #fff;
+                        text-transform: uppercase;
+                        background: #434343;
+                        padding: 10px;
+                        font-size: 15px;
+                        border-radius: 2px;
+                        text-decoration: none; //display: inline-block;
+                        border: none;
+                        &:hover {
+                            background: red;
+                            letter-spacing: 1px;
+                            -webkit-box-shadow: 0px 5px 30px -10px rgba(0, 0, 0, 0.57);
+                            -moz-box-shadow: 0px 5px 20px -10px rgba(0, 0, 0, 0.57);
+                            box-shadow: 5px 10px -10px rgba(0, 0, 0, 0.57);
+                            transition: all 0.4s ease 0s;
+                        }
+                    }
+                }
+                .content-two {
+                    padding: 0px; // border:1px solid red;
+                    h2 {
+                        font-size: 18px;
+                        line-height: 1.2;
+                        margin-bottom: 3px;
+                    }
+                    h3 {
+                        font-size: 15px;
+                        margin-top: 0px;
+                        margin-bottom: 4px;
+                    }
+                    p {
+                        margin-left: 20px;
+                        font-size: 14px;
+                        align-items: center;
+                    }
+                    hr {
+                        width: 70%;
+                    }
+                    .rating-review {
+                        display: flex;
+                        input {
+                            border: 0;
+                            width: 40px;
+                            padding-right: 2px;
+                            text-align: center;
+                        }
+                        #ratings {
+                            border-right: 1px solid black;
+                        }
+                        #reviews {
+                            width: 20px;
+                        }
+                    }
+                    .wishlist {
+                        //color:red;
+                        cursor: pointer;
+                        span {
+                            color: purple;
+                            font-size: 25px;
+                        }
+                    }
+                }
+                .button-overview {
+                    position: absolute;
+                    display: flex;
+                    flex-wrap: wrap; // width: 15px;
+                    height: 120px;
+                    width: 20px;
+                    float: left;
+                    top: 40%; //left: 50%;
+                    right: 0; //transform: translate(-50%, -50%);
+                    padding: 10px;
+                    align-items: center;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    outline: none;
+                    &:hover{
+                        color:white;
+                        background: black;
+                    }
+                }
+                .button-reviews{
+                    position:absolute;
+                    color:red;
+                    bottom: 0;
+                    padding:5px 50px;
+                    font-size: 13px;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    outline: none;
+                    &:hover{
+                        color:white;
+                        background: black;
+                    }
+                }
+          
+            }
+            .card-about{
+                //display:none;
+                position: relative;
+                width:45%;
+                padding:40px;
+                font-size:20px;
+                button{
+                    display:flex;
+                    flex-wrap: wrap;
+                    position: absolute;
+                    float: left;
+                    top: 40%; //left: 50%;
+                    right: 0; //transform: translate(-50%, -50%);
+                    width:20px;
+                    padding:10px;
+                    border-radius: 5px;
+                    &:hover{
+                        color:white;
+                        background: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card-about-close{
+    display:none;
+}
