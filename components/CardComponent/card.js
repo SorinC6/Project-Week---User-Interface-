@@ -45,6 +45,7 @@ class Book {
 
     expandRev() {
         console.log('expand');
+        // ======== TODO for later ===============
         // books.forEach(item=>{
         //     const contentRev=item.querySelector('.review-Content');
         //     contentRev.classList.add('review-open')
@@ -55,7 +56,7 @@ class Book {
         content.classList.toggle('review-open');
     }
     closeRev() {
-        console.log('close');
+        //console.log('close');
         this.contentR.classList.toggle('review-open');
     }
 }

@@ -378,12 +378,65 @@ header #headerImg {
 .container .cards-container .review-content {
   padding: 0 10px;
   width: 80%;
-  margin: 0 auto;
   font-size: 20px;
+}
+.container .cards-container .review-content .review-close {
+  padding: 1%;
+  width: 15%;
+  width: 100px;
+  background-color: #a0011e;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .cards-container .review-content .review-close:hover {
+  background-color: white;
+  border: 1px solid #a0011e;
+  color: #a0011e;
 }
 .card-about-close {
   display: none;
 }
 .review-open {
   display: none;
+}
+.articleForm {
+  margin: 0;
+}
+.articleForm form {
+  display: flex;
+}
+.articleForm form input[type=text],
+.articleForm form textarea {
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0.5rem 0 1.5rem;
+  resize: vertical;
+  margin-right: 30px;
+}
+.articleForm form textarea {
+  width: 400px;
+}
+.articleForm form input[type=text] {
+  width: 30%;
+}
+.articleForm #submitBtn {
+  padding: 1%;
+  width: 15%;
+  background-color: #a0011e;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.articleForm #submitBtn:hover {
+  background-color: white;
+  border: 1px solid #a0011e;
+  color: #a0011e;
+}
+.buttons-review {
+  display: flex;
+  justify-content: space-around;
 }

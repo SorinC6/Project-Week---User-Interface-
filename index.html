@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
@@ -149,11 +150,20 @@
                     </div>
                 </div>
                 <div class="review-content review-open">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia distinctio corrupti voluptatum
-                        laudantium minima, officiis commodi enim laboriosam debitis impedit eum maxime rem pariatur ad
-                        quis perspiciatis adipisci cumque expedita necessitatibus consequuntur quasi provident
-                        reprehenderit doloribus suscipit? Voluptate, iure repudiandae.</p>
-                    <button class='review-close'>Close Reviews</button>
+                    <div class="articleForm">
+                        <form action="#">
+                            <!-- <label for="articleTitle">Name</label> -->
+                            <input type="text" id="title" name="title" placeholder="enter your name here..">
+
+                            <!-- <label for="articleText">Subject</label> -->
+                            <textarea id="articleText" name="text" placeholder="Write your oppinion.."></textarea>
+
+                        </form>
+                        <div class="buttons-review">
+                            <input type="submit" value="Submit" id="submitBtn">
+                            <button class='review-close'>Close Reviews</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -214,12 +214,28 @@
             //color:red;
             padding:0 10px;
             width:80%;
-            margin:0 auto;
+            //margin:0 auto;
             font-size:20px;
+            .review-close{
+                padding: 1%;
+                width: 15%;
+                width:100px;
+                background-color: rgb(160, 1, 30);
+                border: 1px solid white;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                &:hover {
+                  background-color: white;
+                  border: 1px solid rgb(160, 1, 30);
+                  color: rgb(160, 1, 30);
+                }
+              }
+            }
         }
        
     }
-}
+
 
 .card-about-close{
     display:none;
@@ -227,4 +243,52 @@
 .review-open{
     display:none;
 }
+
+
+//========================ARTICLE FORM ====
+
+.articleForm {
+    margin:0;
+    form {
+      display: flex;
+
+      input[type=text], textarea {
+        padding: 1.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 0.5rem 0 1.5rem;
+        resize: vertical;
+        margin-right:30px;
+      }
+
+      textarea{
+          width:400px;
+      }
+    
+      input[type=text] {
+        width: 30%;
+      }
+      
+  
+    }
+    #submitBtn {
+        padding: 1%;
+        width: 15%;
+        background-color: rgb(160, 1, 30);
+        border: 1px solid white;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+          background-color: white;
+          border: 1px solid rgb(160, 1, 30);
+          color: rgb(160, 1, 30);
+        }
+      }
+  }
+
+  .buttons-review{
+      display: flex;
+      justify-content: space-around;
+  }
 
