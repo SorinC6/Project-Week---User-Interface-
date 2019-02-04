@@ -220,6 +220,7 @@ header #headerImg {
   margin: 0 auto;
 }
 .container .cards-container {
+  padding-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -439,4 +440,21 @@ header #headerImg {
 .buttons-review {
   display: flex;
   justify-content: space-around;
+}
+.review-text {
+  padding: 5px 20px;
+  border-bottom: 1px solid black;
+}
+.review-text h2 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.review-text h5 {
+  margin: 0;
+  font-size: 12px;
+  border-bottom: 1px dashed black;
+  margin-bottom: 10px;
+}
+.review-text hr {
+  width: 80%;
 }
