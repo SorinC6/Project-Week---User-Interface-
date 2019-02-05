@@ -86,7 +86,7 @@ header #headerImg {
   /* Inaltime totala */
   overflow: auto;
   /* Scroll daca e nevoie */
-  background-color: grey;
+  background-color: #AB8FBF;
   opacity: 0.97;
   z-index: 3;
 }

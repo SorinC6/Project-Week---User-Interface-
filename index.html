@@ -209,6 +209,557 @@
                 </div>
             </div>
 
+             <!--BOOK CARD COMPONENTS -->
+             <div class='card-holder2'>
+                <div class="card-holder">
+                    <div class="card" data-tab="sf">
+                        <div class="content-one">
+                            <img src="./assets/bookCover/sfBook/dilemateca.jpg" alt="">
+                            <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                            </div>
+                            <div class="share-buttons">
+                                <!-- Facebook -->
+                                <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                                </a>
+                                <!-- Google+ -->
+                                <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                                </a>
+
+                                <!-- LinkedIn -->
+                                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com"
+                                    target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                                </a>
+                                <!-- Twitter -->
+                                <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
+                                    target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                                </a>
+                            </div>
+                            <div class="button_cont"><a class="buy-button" href="add-website-here" target="_blank" rel="nofollow noopener">Buy
+                                    Now</a></div>
+                        </div>
+                        <div class="content-two">
+                            <h2>Harry Potter and the Deathly Hallows</h2>
+                            <h3>by J.K. Rowling</h3>
+                            <p>published date: <span>date here</span></p>
+                            <hr>
+                            <div class="rating-review">
+                                <p>Rating: <span>
+                                        <input id='ratings' value='****'>
+                                    </span></p>
+                                <p><input id='reviews' value='4'>Reviews</p>
+                            </div>
+                            <hr>
+                            <div class='wishlist '>
+                                &#9825
+                                <span>Add to Wishlist</span>
+                            </div>
+                            <div class="choose-buyer">
+                                <h2>Select buyer</h2>
+                                <select>
+                                    <option value="amazon">AMAZON</option>
+                                    <option value="melbourne">Melbourne</option>
+                                    <option value="cromwell" selected>Cromwell</option>
+                                    <option value="queenstown">Queenstown</option>
+                                </select>
+                                <input type="text" name="" id="price" value="0$">
+                            </div>
+                        </div>
+                        <button class='button-overview'>O v e r v i e w</button>
+                        <button class='button-reviews'>Reviews</button>
+
+                        <!-- <button class='button-see-reviews'>See Reviews</button> -->
+                    </div>
+
+                    <!-- OLD VERSION ON OVERVIEW BUTTON -->
+                    <div class="card-about card-about-close">
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae temporibus mollitia libero
+                            reiciendis maiores quis culpa. Perspiciatis odit aspernatur nisi soluta consequatur ipsam.
+                            Natus, fugit? Placeat aperiam reiciendis aliquid pariatur?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga repellendus soluta recusandae!
+                            Facere, nam! Deleniti, esse praesentium nihil ab quae officiis non facilis architecto
+                            maxime
+                            accusamus! Sit numquam libero temporibus? Neque, deserunt quaerat, ex quo nihil dolorum
+                            aliquam</p> -->
+
+                        <button class='btn-close-about'>C L O S E</button>
+                    </div>
+
+                    <!-- Modal content ON OVERVIEW BUTTON-->
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <h2>Harry Potter and the Deathly Hallows</h2>
+                                <h3>by J.K. Rowling</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus a ad quaerat ipsum culpa voluptatibus dolor numquam non! Iusto facere, inventore aliquam eaque nobis quidem quae consequatur iste magni autem quia laborum. Veniam, sunt. Voluptatum impedit maxime officia odio?</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore doloremque obcaecati beatae quas sint vitae, aliquid eaque officiis quam adipisci!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <h5>Other important information about the book</h5>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="review-content review-open">
+                    <div class="articleForm">
+                        <form action="#">
+                            <!-- <label for="articleTitle">Name</label> -->
+                            <input type="text" id="title" name="title" placeholder="enter your name here..">
+
+                            <!-- <label for="articleText">Subject</label> -->
+                            <textarea id="articleText" name="text" placeholder="Write your oppinion.."></textarea>
+
+                        </form>
+                        <div class="buttons-review">
+                            <input type="submit" value="Submit" id="submitBtn">
+                            <button class='review-close'>Close Reviews</button>
+                        </div>
+                        <!-- <div class='review-text'>
+                            <h2 class='rev-h2'><span>From:</span></h2>
+                            <h5 class='rev-data'>data</h5>
+                            <p class='rev-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, eligendi!</p>
+                            <hr>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+
+
+             <!--BOOK CARD COMPONENTS -->
+             <div class='card-holder2'>
+                <div class="card-holder">
+                    <div class="card" data-tab="sf">
+                        <div class="content-one">
+                            <img src="./assets/bookCover/sfBook/dilemateca.jpg" alt="">
+                            <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                            </div>
+                            <div class="share-buttons">
+                                <!-- Facebook -->
+                                <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                                </a>
+                                <!-- Google+ -->
+                                <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                                </a>
+
+                                <!-- LinkedIn -->
+                                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com"
+                                    target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                                </a>
+                                <!-- Twitter -->
+                                <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
+                                    target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                                </a>
+                            </div>
+                            <div class="button_cont"><a class="buy-button" href="add-website-here" target="_blank" rel="nofollow noopener">Buy
+                                    Now</a></div>
+                        </div>
+                        <div class="content-two">
+                            <h2>Harry Potter and the Deathly Hallows</h2>
+                            <h3>by J.K. Rowling</h3>
+                            <p>published date: <span>date here</span></p>
+                            <hr>
+                            <div class="rating-review">
+                                <p>Rating: <span>
+                                        <input id='ratings' value='****'>
+                                    </span></p>
+                                <p><input id='reviews' value='4'>Reviews</p>
+                            </div>
+                            <hr>
+                            <div class='wishlist '>
+                                &#9825
+                                <span>Add to Wishlist</span>
+                            </div>
+                            <div class="choose-buyer">
+                                <h2>Select buyer</h2>
+                                <select>
+                                    <option value="amazon">AMAZON</option>
+                                    <option value="melbourne">Melbourne</option>
+                                    <option value="cromwell" selected>Cromwell</option>
+                                    <option value="queenstown">Queenstown</option>
+                                </select>
+                                <input type="text" name="" id="price" value="0$">
+                            </div>
+                        </div>
+                        <button class='button-overview'>O v e r v i e w</button>
+                        <button class='button-reviews'>Reviews</button>
+
+                        <!-- <button class='button-see-reviews'>See Reviews</button> -->
+                    </div>
+
+                    <!-- OLD VERSION ON OVERVIEW BUTTON -->
+                    <div class="card-about card-about-close">
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae temporibus mollitia libero
+                            reiciendis maiores quis culpa. Perspiciatis odit aspernatur nisi soluta consequatur ipsam.
+                            Natus, fugit? Placeat aperiam reiciendis aliquid pariatur?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga repellendus soluta recusandae!
+                            Facere, nam! Deleniti, esse praesentium nihil ab quae officiis non facilis architecto
+                            maxime
+                            accusamus! Sit numquam libero temporibus? Neque, deserunt quaerat, ex quo nihil dolorum
+                            aliquam</p> -->
+
+                        <button class='btn-close-about'>C L O S E</button>
+                    </div>
+
+                    <!-- Modal content ON OVERVIEW BUTTON-->
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <h2>Harry Potter and the Deathly Hallows</h2>
+                                <h3>by J.K. Rowling</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus a ad quaerat ipsum culpa voluptatibus dolor numquam non! Iusto facere, inventore aliquam eaque nobis quidem quae consequatur iste magni autem quia laborum. Veniam, sunt. Voluptatum impedit maxime officia odio?</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore doloremque obcaecati beatae quas sint vitae, aliquid eaque officiis quam adipisci!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <h5>Other important information about the book</h5>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="review-content review-open">
+                    <div class="articleForm">
+                        <form action="#">
+                            <!-- <label for="articleTitle">Name</label> -->
+                            <input type="text" id="title" name="title" placeholder="enter your name here..">
+
+                            <!-- <label for="articleText">Subject</label> -->
+                            <textarea id="articleText" name="text" placeholder="Write your oppinion.."></textarea>
+
+                        </form>
+                        <div class="buttons-review">
+                            <input type="submit" value="Submit" id="submitBtn">
+                            <button class='review-close'>Close Reviews</button>
+                        </div>
+                        <!-- <div class='review-text'>
+                            <h2 class='rev-h2'><span>From:</span></h2>
+                            <h5 class='rev-data'>data</h5>
+                            <p class='rev-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, eligendi!</p>
+                            <hr>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+
+
+             <!--BOOK CARD COMPONENTS -->
+             <div class='card-holder2'>
+                <div class="card-holder">
+                    <div class="card" data-tab="sf">
+                        <div class="content-one">
+                            <img src="./assets/bookCover/sfBook/dilemateca.jpg" alt="">
+                            <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                            </div>
+                            <div class="share-buttons">
+                                <!-- Facebook -->
+                                <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                                </a>
+                                <!-- Google+ -->
+                                <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                                </a>
+
+                                <!-- LinkedIn -->
+                                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com"
+                                    target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                                </a>
+                                <!-- Twitter -->
+                                <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
+                                    target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                                </a>
+                            </div>
+                            <div class="button_cont"><a class="buy-button" href="add-website-here" target="_blank" rel="nofollow noopener">Buy
+                                    Now</a></div>
+                        </div>
+                        <div class="content-two">
+                            <h2>Harry Potter and the Deathly Hallows</h2>
+                            <h3>by J.K. Rowling</h3>
+                            <p>published date: <span>date here</span></p>
+                            <hr>
+                            <div class="rating-review">
+                                <p>Rating: <span>
+                                        <input id='ratings' value='****'>
+                                    </span></p>
+                                <p><input id='reviews' value='4'>Reviews</p>
+                            </div>
+                            <hr>
+                            <div class='wishlist '>
+                                &#9825
+                                <span>Add to Wishlist</span>
+                            </div>
+                            <div class="choose-buyer">
+                                <h2>Select buyer</h2>
+                                <select>
+                                    <option value="amazon">AMAZON</option>
+                                    <option value="melbourne">Melbourne</option>
+                                    <option value="cromwell" selected>Cromwell</option>
+                                    <option value="queenstown">Queenstown</option>
+                                </select>
+                                <input type="text" name="" id="price" value="0$">
+                            </div>
+                        </div>
+                        <button class='button-overview'>O v e r v i e w</button>
+                        <button class='button-reviews'>Reviews</button>
+
+                        <!-- <button class='button-see-reviews'>See Reviews</button> -->
+                    </div>
+
+                    <!-- OLD VERSION ON OVERVIEW BUTTON -->
+                    <div class="card-about card-about-close">
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae temporibus mollitia libero
+                            reiciendis maiores quis culpa. Perspiciatis odit aspernatur nisi soluta consequatur ipsam.
+                            Natus, fugit? Placeat aperiam reiciendis aliquid pariatur?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga repellendus soluta recusandae!
+                            Facere, nam! Deleniti, esse praesentium nihil ab quae officiis non facilis architecto
+                            maxime
+                            accusamus! Sit numquam libero temporibus? Neque, deserunt quaerat, ex quo nihil dolorum
+                            aliquam</p> -->
+
+                        <button class='btn-close-about'>C L O S E</button>
+                    </div>
+
+                    <!-- Modal content ON OVERVIEW BUTTON-->
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <h2>Harry Potter and the Deathly Hallows</h2>
+                                <h3>by J.K. Rowling</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus a ad quaerat ipsum culpa voluptatibus dolor numquam non! Iusto facere, inventore aliquam eaque nobis quidem quae consequatur iste magni autem quia laborum. Veniam, sunt. Voluptatum impedit maxime officia odio?</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore doloremque obcaecati beatae quas sint vitae, aliquid eaque officiis quam adipisci!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <h5>Other important information about the book</h5>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="review-content review-open">
+                    <div class="articleForm">
+                        <form action="#">
+                            <!-- <label for="articleTitle">Name</label> -->
+                            <input type="text" id="title" name="title" placeholder="enter your name here..">
+
+                            <!-- <label for="articleText">Subject</label> -->
+                            <textarea id="articleText" name="text" placeholder="Write your oppinion.."></textarea>
+
+                        </form>
+                        <div class="buttons-review">
+                            <input type="submit" value="Submit" id="submitBtn">
+                            <button class='review-close'>Close Reviews</button>
+                        </div>
+                        <!-- <div class='review-text'>
+                            <h2 class='rev-h2'><span>From:</span></h2>
+                            <h5 class='rev-data'>data</h5>
+                            <p class='rev-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, eligendi!</p>
+                            <hr>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+
+
+             <!--BOOK CARD COMPONENTS -->
+             <div class='card-holder2'>
+                <div class="card-holder">
+                    <div class="card" data-tab="sf">
+                        <div class="content-one">
+                            <img src="./assets/bookCover/sfBook/dilemateca.jpg" alt="">
+                            <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                            </div>
+                            <div class="share-buttons">
+                                <!-- Facebook -->
+                                <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                                </a>
+                                <!-- Google+ -->
+                                <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                                </a>
+
+                                <!-- LinkedIn -->
+                                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com"
+                                    target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                                </a>
+                                <!-- Twitter -->
+                                <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
+                                    target="_blank">
+                                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                                </a>
+                            </div>
+                            <div class="button_cont"><a class="buy-button" href="add-website-here" target="_blank" rel="nofollow noopener">Buy
+                                    Now</a></div>
+                        </div>
+                        <div class="content-two">
+                            <h2>Harry Potter and the Deathly Hallows</h2>
+                            <h3>by J.K. Rowling</h3>
+                            <p>published date: <span>date here</span></p>
+                            <hr>
+                            <div class="rating-review">
+                                <p>Rating: <span>
+                                        <input id='ratings' value='****'>
+                                    </span></p>
+                                <p><input id='reviews' value='4'>Reviews</p>
+                            </div>
+                            <hr>
+                            <div class='wishlist '>
+                                &#9825
+                                <span>Add to Wishlist</span>
+                            </div>
+                            <div class="choose-buyer">
+                                <h2>Select buyer</h2>
+                                <select>
+                                    <option value="amazon">AMAZON</option>
+                                    <option value="melbourne">Melbourne</option>
+                                    <option value="cromwell" selected>Cromwell</option>
+                                    <option value="queenstown">Queenstown</option>
+                                </select>
+                                <input type="text" name="" id="price" value="0$">
+                            </div>
+                        </div>
+                        <button class='button-overview'>O v e r v i e w</button>
+                        <button class='button-reviews'>Reviews</button>
+
+                        <!-- <button class='button-see-reviews'>See Reviews</button> -->
+                    </div>
+
+                    <!-- OLD VERSION ON OVERVIEW BUTTON -->
+                    <div class="card-about card-about-close">
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae temporibus mollitia libero
+                            reiciendis maiores quis culpa. Perspiciatis odit aspernatur nisi soluta consequatur ipsam.
+                            Natus, fugit? Placeat aperiam reiciendis aliquid pariatur?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga repellendus soluta recusandae!
+                            Facere, nam! Deleniti, esse praesentium nihil ab quae officiis non facilis architecto
+                            maxime
+                            accusamus! Sit numquam libero temporibus? Neque, deserunt quaerat, ex quo nihil dolorum
+                            aliquam</p> -->
+
+                        <button class='btn-close-about'>C L O S E</button>
+                    </div>
+
+                    <!-- Modal content ON OVERVIEW BUTTON-->
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <h2>Harry Potter and the Deathly Hallows</h2>
+                                <h3>by J.K. Rowling</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus a ad quaerat ipsum culpa voluptatibus dolor numquam non! Iusto facere, inventore aliquam eaque nobis quidem quae consequatur iste magni autem quia laborum. Veniam, sunt. Voluptatum impedit maxime officia odio?</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore doloremque obcaecati beatae quas sint vitae, aliquid eaque officiis quam adipisci!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <h5>Other important information about the book</h5>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="review-content review-open">
+                    <div class="articleForm">
+                        <form action="#">
+                            <!-- <label for="articleTitle">Name</label> -->
+                            <input type="text" id="title" name="title" placeholder="enter your name here..">
+
+                            <!-- <label for="articleText">Subject</label> -->
+                            <textarea id="articleText" name="text" placeholder="Write your oppinion.."></textarea>
+
+                        </form>
+                        <div class="buttons-review">
+                            <input type="submit" value="Submit" id="submitBtn">
+                            <button class='review-close'>Close Reviews</button>
+                        </div>
+                        <!-- <div class='review-text'>
+                            <h2 class='rev-h2'><span>From:</span></h2>
+                            <h5 class='rev-data'>data</h5>
+                            <p class='rev-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, eligendi!</p>
+                            <hr>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+
 
 
 
