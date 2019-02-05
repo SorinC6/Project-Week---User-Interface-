@@ -9,6 +9,12 @@ class Book {
         this.expandButton = domElement.querySelector('.button-overview');
         this.closeButton = domElement.querySelector('.btn-close-about');
 
+
+          // Get the modal
+          this.modal = domElement.querySelector('#myModal');
+        //console.log(this.modal);
+        this.span = domElement.querySelector('.close');
+
         //EXAPND REVIEW BUTTONS
         this.expandReview = domElement.querySelector('.button-reviews');
         this.closeReviews = domElement.querySelector('.review-close');
@@ -30,18 +36,37 @@ class Book {
 
     expand() {
 
-        books.forEach(item => {
-            //console.log(item);
-            const cardA = item.querySelector('.card-about');
-            //console.log(cardA);
-            cardA.classList.add('card-about-close');
+        // books.forEach(item => {
+        //     const cardA = item.querySelector('.card-about');
+        //     cardA.classList.add('card-about-close');
 
-        })
-        //console.log(books);
-        const card = this.domElement.querySelector('.card-about');
+        // })
+        // const card = this.domElement.querySelector('.card-about');
 
-        card.classList.toggle('card-about-close');
-        //console.log('click');
+        // card.classList.toggle('card-about-close');
+
+        console.log('expamnddd')
+        
+         // When the user clicks the button, open the modal 
+         this.modal.style.display = "block";
+
+         // Get the <span> element that closes the modal
+        
+        console.log(this.span)
+        //const span = domElement.querySelector('.close');
+         // When the user clicks on <span> (x), close the modal
+         this.span.addEventListener('click',()=>{
+            this.modal.style.display='none';
+         })
+       
+            // When the user clicks anywhere outside of the modal, close it
+        window.onclick =  (event) => {
+            if (event.target === this.modal) {
+                this.modal.style.display = "none";
+            }
+        }
+        
+       
     }
     close() {
         this.about.classList.toggle('card-about-close');
@@ -75,9 +100,9 @@ class Book {
         //newDiv.textContent = text;
         reviewDiv.appendChild(newDiv)
 
-        const newSpan=document.createElement('span');
-        newSpan.textContent="From:";
-        newSpan.className='rev-h2';
+        const newSpan = document.createElement('span');
+        newSpan.textContent = "From:";
+        newSpan.className = 'rev-h2';
 
         const newName = document.createElement('h2');
         //newName.appendChild(newSpan);
@@ -88,8 +113,8 @@ class Book {
         newSUbject.classList = 'rev-text';
         newSUbject.textContent = subject.value;
 
-        nameField.value='';
-        subject.value='';
+        nameField.value = '';
+        subject.value = '';
 
         newDiv.appendChild(newName);
         newDiv.appendChild(newSUbject);
@@ -101,4 +126,19 @@ const books = document.querySelectorAll('.card-holder2');
 books.forEach(item => {
     return new Book(item);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
