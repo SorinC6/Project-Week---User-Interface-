@@ -24,3 +24,22 @@ function closeNavigation(){
     expanded.style.display="none";
 }
 
+
+//================GASP ANIMATION=======
+
+const aTag=document.querySelectorAll('a');
+
+aTag.forEach(item=>{
+    item.addEventListener('mouseover',function(){
+        //item.style.color='red';
+        TweenMax.to(item,1,{fontSize:25})
+        TweenMax.to(item,1,{color:'black'})
+    })
+
+    item.addEventListener('mouseout',function(){
+        //item.style.color='red';
+        TweenMax.to(item,1,{fontSize:15})
+        TweenMax.to(item,1,{color:'white'})
+    })
+})
+
