@@ -1,3 +1,7 @@
+html,
+body {
+  background: #FFF7FD;
+}
 .width-100 {
   width: 100%;
 }
@@ -8,7 +12,7 @@ header .nav-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: grey;
+  background: #AB8FBF;
   padding: 15px 30px;
   position: fixed;
   width: 100%;
@@ -131,7 +135,6 @@ header #headerImg {
   width: 100%;
   flex-wrap: wrap;
   height: 10px;
-  background-color: white;
 }
 @media (max-width: 500px) {
   .container .tabs {
@@ -190,6 +193,8 @@ header #headerImg {
 }
 .container .search-content {
   padding-top: 20px;
+  background: #F4E5FF;
+  padding-bottom: 10px;
 }
 @media (max-width: 500px) {
   .container .search-content {
@@ -282,6 +287,7 @@ header #headerImg {
 .container .cards-container .card-holder {
   display: flex;
   margin-bottom: 30px;
+  background: #E5DAE0;
 }
 @media (max-width: 500px) {
   .container .cards-container .card-holder {
@@ -552,7 +558,7 @@ header #headerImg {
   align-items: flex-start;
   padding: 10px 80px;
   margin-top: 70px;
-  background: grey;
+  background: #AB8FBF;
   position: relative;
   padding-bottom: 30px;
 }
