@@ -2,10 +2,10 @@ const imgNavBtn = document.querySelector('#hamburgerImg');
 //console.log(imgNavBtn);
 const body = document.querySelector('body');
 const expanded=document.querySelector('.transparent');
-console.log(expanded);
+//console.log(expanded);
 imgNavBtn.addEventListener('click', function() {
     //using toggle maybe ...
-    console.log('tralala');
+    //console.log('tralala');
     expanded.style.display='block';
     TweenMax.from('.transparent',0.5,{marginTop:500})
     TweenMax.from('.expandedText',2,{

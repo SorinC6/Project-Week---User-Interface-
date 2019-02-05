@@ -285,6 +285,7 @@ header #headerImg {
   }
 }
 .container .cards-container .card-holder {
+  position: relative;
   display: flex;
   margin-bottom: 30px;
   background: #E5DAE0;
@@ -436,6 +437,11 @@ header #headerImg {
 .container .cards-container .card-holder .card .button-reviews:hover {
   color: white;
   background: black;
+}
+.container .cards-container .card-holder .close-card-button {
+  position: absolute;
+  right: 1%;
+  cursor: pointer;
 }
 .container .cards-container .card-holder .card-about {
   position: relative;

@@ -15,6 +15,11 @@ class Book {
         //console.log(this.modal);
         this.span = domElement.querySelector('.close');
 
+
+        //DeleteCardButton
+        this.deteleCard=this.domElement.querySelector('.close-card-button');
+        //console.log(this.deteleCard);
+
         //EXAPND REVIEW BUTTONS
         this.expandReview = domElement.querySelector('.button-reviews');
         this.closeReviews = domElement.querySelector('.review-close');
@@ -32,6 +37,9 @@ class Book {
         this.closeReviews.addEventListener('click', () => this.closeRev());
 
         this.submitReview.addEventListener('click', () => this.submitRev());
+
+        this.deteleCard.addEventListener('click', () => this.deleteCardFunc())
+
     }
 
     expand() {
@@ -120,12 +128,19 @@ class Book {
         newDiv.appendChild(newSUbject);
 
     }
+    deleteCardFunc() {
+        console.log('detelecard');
+        this.domElement.style.display='none';
+    }
 }
 
 const books = document.querySelectorAll('.card-holder2');
 books.forEach(item => {
     return new Book(item);
 })
+
+
+
 
 
 
