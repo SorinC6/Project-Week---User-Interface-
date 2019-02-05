@@ -147,6 +147,45 @@ books.forEach(item => {
 })
 
 
+class Books{
+    constructor(){
+        this.books=document.querySelectorAll('.card-holder');
+        this.books.forEach( item => {
+            item.title=item.querySelector('.content-two').children[0].textContent;
+            item.author=item.querySelector('.content-two').children[1].textContent;
+        })
+
+    }
+}
+
+const allBooks=new Books();
+console.log(allBooks)
+
+const dataList=document.querySelector('#booksName');
+
+allBooks.books.forEach(item=>{
+    //console.log(item);
+    const option=document.createElement('option');
+    option.value=item.title+' '+item.author;
+    dataList.append(option);
+    //if()
+})
+
+function showBooks(){
+    const chosenBook = document.querySelector('#search');
+    const chosenBookDescription = chosenBook.value;
+
+    allBooks.books.forEach(book => {
+        //console.log(book.title+' '+book.author+' INPUT VALUE:'+chosenBookDescription);
+        const bookCompleteDescription=book.title+' '+book.author;
+        if (book.title.includes(chosenBookDescription) || book.author.includes(chosenBookDescription) || bookCompleteDescription.includes(chosenBookDescription)){
+            book.classList.remove('card-about-close');
+        }else{
+            book.classList.add('card-about-close');
+        }
+    })
+}
+
 
 
 

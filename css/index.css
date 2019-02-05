@@ -9,6 +9,13 @@ body {
 .border-bottom-grey {
   border-bottom: 1px solid lightgrey;
 }
+body {
+  margin-top: 0;
+  margin-left: 0;
+}
+header {
+  text-align: center;
+}
 header .nav-content {
   display: flex;
   justify-content: space-between;
@@ -64,8 +71,9 @@ header .nav-content img:hover {
 }
 header #headerImg {
   margin-top: 60px;
-  width: 100%;
+  width: 1300px;
   height: 250px;
+  border-radius: 20px;
 }
 @media (max-width: 500px) {
   header #headerImg {
@@ -287,7 +295,6 @@ header #headerImg {
 }
 .container .cards-container .card-holder {
   position: relative;
-  display: flex;
   margin-bottom: 30px;
   background: #E5DAE0;
 }
@@ -498,9 +505,7 @@ header #headerImg {
   border: 1px solid #a0011e;
   color: #a0011e;
 }
-.card-about-close {
-  display: none;
-}
+.card-about-close,
 .review-open {
   display: none;
 }
