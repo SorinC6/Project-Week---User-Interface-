@@ -238,41 +238,21 @@ header #headerImg {
     margin-top: 40px;
   }
 }
-.rate {
-  float: right;
-  height: 46px;
-  padding: 0 10px;
-  left: 0;
-}
-.rate:not(:checked) > input {
-  position: absolute;
-  top: -9999px;
-}
-.rate:not(:checked) > label {
-  float: right;
-  width: 1em;
-  overflow: hidden;
-  white-space: nowrap;
+.rate input {
+  border: 0;
+  font-size: 25px;
+  max-width: 10%;
+  color: #502626;
+  outline: none;
   cursor: pointer;
-  font-size: 30px;
-  color: #ccc;
+  background-color: transparent;
+  text-align: center;
 }
-.rate:not(:checked) > label:before {
-  content: '★ ';
-}
-.rate > input:checked ~ label {
-  color: #ffc700;
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
+.rate input:hover {
   color: #deb217;
 }
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-  color: #c59b08;
+.rate .full-star {
+  color: #ffc700;
 }
 .container {
   font-size: 1.6rem;
@@ -308,7 +288,7 @@ header #headerImg {
   position: relative;
   display: flex;
   justify-content: center;
-  max-width: 450px;
+  width: 450px;
   border: 1px solid black;
   box-shadow: 10px 8px 10px grey;
 }
@@ -391,22 +371,18 @@ header #headerImg {
 }
 .container .cards-container .card-holder .card .content-two .rating-review input {
   border: 0;
-  width: 40px;
+  width: 60px;
+  outline: none;
   padding-right: 2px;
   text-align: center;
+  cursor: pointer;
+  background: transparent;
 }
 .container .cards-container .card-holder .card .content-two .rating-review #ratings {
   border-right: 1px solid black;
 }
 .container .cards-container .card-holder .card .content-two .rating-review #reviews {
   max-width: 10px;
-}
-.container .cards-container .card-holder .card .content-two .wishlist {
-  cursor: pointer;
-}
-.container .cards-container .card-holder .card .content-two .wishlist span {
-  color: purple;
-  font-size: 25px;
 }
 .container .cards-container .card-holder .card .content-two .choose-buyer {
   display: flex;
@@ -417,6 +393,23 @@ header #headerImg {
 }
 .container .cards-container .card-holder .card .content-two .choose-buyer input {
   width: 30px;
+}
+.container .cards-container .card-holder .card .content-two .wishlist {
+  cursor: pointer;
+}
+.container .cards-container .card-holder .card .content-two .wishlist .wish {
+  border: 0;
+  color: red;
+  background-color: transparent;
+  width: 250px;
+  font-size: 25px;
+  outline: none;
+  cursor: pointer;
+}
+.container .cards-container .card-holder .card .content-two .wishlist .wish label {
+  color: black;
+  font-size: 25px;
+  margin-left: 4px;
 }
 .container .cards-container .card-holder .card .button-overview {
   position: absolute;
@@ -455,6 +448,7 @@ header #headerImg {
 .container .cards-container .card-holder .close-card-button {
   position: absolute;
   right: 1%;
+  top: 0;
   cursor: pointer;
   display: none;
 }

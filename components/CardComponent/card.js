@@ -9,22 +9,22 @@ class Book {
         this.expandButton = domElement.querySelector('.button-overview');
         this.closeButton = domElement.querySelector('.btn-close-about');
 
-        
-          // Get the modal
-          this.modal = domElement.querySelector('#myModal');
+
+        // Get the modal
+        this.modal = domElement.querySelector('#myModal');
         //console.log(this.modal);
         this.span = domElement.querySelector('.close');
 
 
         //DeleteCardButton
-        this.deteleCard=this.domElement.querySelector('.close-card-button');
-        this.domElement.addEventListener('mouseover',()=>{
-             this.deteleCard.style.display="block";
+        this.deteleCard = this.domElement.querySelector('.close-card-button');
+        this.domElement.addEventListener('mouseover', () => {
+            this.deteleCard.style.display = "block";
         })
-        this.domElement.addEventListener('mouseout',()=>{
-            this.deteleCard.style.display="none";
-            
-       })
+        this.domElement.addEventListener('mouseout', () => {
+            this.deteleCard.style.display = "none";
+
+        })
         //console.log(this.deteleCard);
 
         //EXAPND REVIEW BUTTONS
@@ -61,27 +61,27 @@ class Book {
         // card.classList.toggle('card-about-close');
 
         //console.log('expamnddd')
-        
-         // When the user clicks the button, open the modal 
-         this.modal.style.display = "block";
 
-         // Get the <span> element that closes the modal
-        
+        // When the user clicks the button, open the modal 
+        this.modal.style.display = "block";
+
+        // Get the <span> element that closes the modal
+
         //console.log(this.span)
         //const span = domElement.querySelector('.close');
-         // When the user clicks on <span> (x), close the modal
-         this.span.addEventListener('click',()=>{
-            this.modal.style.display='none';
-         })
-       
-            // When the user clicks anywhere outside of the modal, close it
-        window.onclick =  (event) => {
+        // When the user clicks on <span> (x), close the modal
+        this.span.addEventListener('click', () => {
+            this.modal.style.display = 'none';
+        })
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = (event) => {
             if (event.target === this.modal) {
                 this.modal.style.display = "none";
             }
         }
-        
-       
+
+
     }
     close() {
         this.about.classList.toggle('card-about-close');
@@ -137,7 +137,7 @@ class Book {
     }
     deleteCardFunc() {
         console.log('detelecard');
-        this.domElement.style.display='none';
+        this.domElement.style.display = 'none';
     }
 }
 
@@ -147,58 +147,97 @@ books.forEach(item => {
 })
 
 
-class Books{
-    constructor(){
-        this.books=document.querySelectorAll('.card-holder');
-        this.books.forEach( item => {
-            item.title=item.querySelector('.content-two').children[0].textContent;
-            item.author=item.querySelector('.content-two').children[1].textContent;
+class Books {
+    constructor() {
+        this.books = document.querySelectorAll('.card-holder');
+
+        const wish = document.querySelectorAll('.wishlist');
+
+        wish.forEach(wishlist => {
+            wishlist.children[0].addEventListener('click', addToFavorites);
+            wishlist.children[1].addEventListener('click', addToFavorites);
+            function addToFavorites() {
+                wishlist.children[0].classList.toggle('card-about-close');
+                wishlist.children[1].classList.toggle('card-about-close');
+            }
         })
 
+        let num=0;
+        this.books.forEach((item,index) => {
+            item.title = item.querySelector('.content-two').children[0].textContent;
+            item.author = item.querySelector('.content-two').children[1].textContent;
+
+            //===========STARS RATING====================\\
+            const stars = item.querySelectorAll('.rate');
+            stars.forEach(starHolder => {
+                //starHolder.className = 'rate' + index;
+                for (let nr = 1; nr <= 5; nr++) {
+                    const star = document.createElement('input');
+                    star.readOnly = true;
+                    star.id = num + nr;
+                    star.name = nr;
+                    star.value = "★ ";
+                    star.style.maxWidth="32px"
+                    star.addEventListener('click', function () {
+                        //debugger;
+                        for (let i = 0; i < starHolder.children.length; i++) {
+                            let idStea = starHolder.children[i].id;
+                            bookStars(star);
+                            if (star.id >= idStea) {
+                                starHolder.children[i].classList.add('full-star');
+                            } else {
+                                starHolder.children[i].classList.remove('full-star');
+                            }
+
+                        };
+                    });
+
+                    starHolder.appendChild(star);
+                }
+                num = num + 5;
+                //console.log(starHolder);
+            });
+
+            function bookStars(stele) {
+                item.stars = stele.name;
+
+                const rating = item.querySelector('#ratings');
+                rating.value = '★'.repeat(stele.name);
+                rating.style.color = 'yellow';
+            }
+            //console.log(stars);
+
+        })
     }
 }
 
-const allBooks=new Books();
+const allBooks = new Books();
 console.log(allBooks)
 
-const dataList=document.querySelector('#booksName');
+const dataList = document.querySelector('#booksName');
 
-allBooks.books.forEach(item=>{
+allBooks.books.forEach(item => {
     //console.log(item);
-    const option=document.createElement('option');
-    option.value=item.title+' '+item.author;
+    const option = document.createElement('option');
+    option.value = item.title + ' ' + item.author;
     dataList.append(option);
     //if()
 })
 
-function showBooks(){
+function showBooks() {
     const chosenBook = document.querySelector('#search');
     const chosenBookDescription = chosenBook.value;
 
     allBooks.books.forEach(book => {
         //console.log(book.title+' '+book.author+' INPUT VALUE:'+chosenBookDescription);
-        const bookCompleteDescription=book.title+' '+book.author;
-        if (book.title.includes(chosenBookDescription) || book.author.includes(chosenBookDescription) || bookCompleteDescription.includes(chosenBookDescription)){
+        const bookCompleteDescription = book.title + ' ' + book.author;
+        if (book.title.includes(chosenBookDescription) || book.author.includes(chosenBookDescription) || bookCompleteDescription.includes(chosenBookDescription)) {
             book.classList.remove('card-about-close');
-        }else{
+        } else {
             book.classList.add('card-about-close');
         }
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
