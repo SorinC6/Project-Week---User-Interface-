@@ -9,6 +9,24 @@ class Book {
         this.expandButton = domElement.querySelector('.button-overview');
         this.closeButton = domElement.querySelector('.btn-close-about');
 
+        
+          // Get the modal
+          this.modal = domElement.querySelector('#myModal');
+        //console.log(this.modal);
+        this.span = domElement.querySelector('.close');
+
+
+        //DeleteCardButton
+        this.deteleCard=this.domElement.querySelector('.close-card-button');
+        this.domElement.addEventListener('mouseover',()=>{
+             this.deteleCard.style.display="block";
+        })
+        this.domElement.addEventListener('mouseout',()=>{
+            this.deteleCard.style.display="none";
+            
+       })
+        //console.log(this.deteleCard);
+
         //EXAPND REVIEW BUTTONS
         this.expandReview = domElement.querySelector('.button-reviews');
         this.closeReviews = domElement.querySelector('.review-close');
@@ -26,29 +44,51 @@ class Book {
         this.closeReviews.addEventListener('click', () => this.closeRev());
 
         this.submitReview.addEventListener('click', () => this.submitRev());
+
+        this.deteleCard.addEventListener('click', () => this.deleteCardFunc())
+
     }
 
     expand() {
 
-        books.forEach(item => {
-            //console.log(item);
-            const cardA = item.querySelector('.card-about');
-            //console.log(cardA);
-            cardA.classList.add('card-about-close');
+        // books.forEach(item => {
+        //     const cardA = item.querySelector('.card-about');
+        //     cardA.classList.add('card-about-close');
 
-        })
-        //console.log(books);
-        const card = this.domElement.querySelector('.card-about');
+        // })
+        // const card = this.domElement.querySelector('.card-about');
 
-        card.classList.toggle('card-about-close');
-        //console.log('click');
+        // card.classList.toggle('card-about-close');
+
+        //console.log('expamnddd')
+        
+         // When the user clicks the button, open the modal 
+         this.modal.style.display = "block";
+
+         // Get the <span> element that closes the modal
+        
+        //console.log(this.span)
+        //const span = domElement.querySelector('.close');
+         // When the user clicks on <span> (x), close the modal
+         this.span.addEventListener('click',()=>{
+            this.modal.style.display='none';
+         })
+       
+            // When the user clicks anywhere outside of the modal, close it
+        window.onclick =  (event) => {
+            if (event.target === this.modal) {
+                this.modal.style.display = "none";
+            }
+        }
+        
+       
     }
     close() {
         this.about.classList.toggle('card-about-close');
     }
 
     expandRev() {
-        console.log('expand');
+        //console.log('expand');
         // ======== TODO for later ===============
         // books.forEach(item=>{
         //     const contentRev=item.querySelector('.review-Content');
@@ -75,9 +115,9 @@ class Book {
         //newDiv.textContent = text;
         reviewDiv.appendChild(newDiv)
 
-        const newSpan=document.createElement('span');
-        newSpan.textContent="From:";
-        newSpan.className='rev-h2';
+        const newSpan = document.createElement('span');
+        newSpan.textContent = "From:";
+        newSpan.className = 'rev-h2';
 
         const newName = document.createElement('h2');
         //newName.appendChild(newSpan);
@@ -88,25 +128,16 @@ class Book {
         newSUbject.classList = 'rev-text';
         newSUbject.textContent = subject.value;
 
-        nameField.value='';
-        subject.value='';
+        nameField.value = '';
+        subject.value = '';
 
         newDiv.appendChild(newName);
         newDiv.appendChild(newSUbject);
 
-
-        // let newDiv = createDiv('div', 'review-text');
-        // let newTitle = createEl('h2', "rev-h2", nameField.value);
-        // let newDate = createEl('h5', 'rev-data', '..th Jan 2019');
-        // let newText = createEl('p', "rev-text", subject.value);
-
-        // newDiv.appendChild(newTitle);
-        // newDiv.appendChild(newDate);
-        // newDiv.appendChild(newText);
-
-        // const formBody=this.domElement.querySelector('.articleForm');
-
-        // formBody.appendChild(newDiv);
+    }
+    deleteCardFunc() {
+        console.log('detelecard');
+        this.domElement.style.display='none';
     }
 }
 
@@ -117,42 +148,19 @@ books.forEach(item => {
 
 
 
-// const queSel = selector => document.querySelector(selector);
-// const headerField = queSel('#title');
-// const articleField = queSel('#articleText');
-// const reviewDiv = queSel('.button-review');
-
-// // Function to create review and return new Book class
-// const createBook = () => {
-
-//   const createDiv = (element, classname = "", text = "") => {
-//     const newDiv = document.createElement(element);
-//     newDiv.className = classname;
-//     newDiv.textContent = text;
-//     reviewDiv.appendChild(newDiv)
-//     return newDiv
-//   }
-
-//   const createEl = (element, classname = "", text = "") => {
-//     const newEl = document.createElement(element);
-//     newEl.className = classname;
-//     newEl.textContent = text;
-//     newDiv.appendChild(newEl)
-//   }
-
-//   let newDiv = createDiv('div', 'review-text');
-//   let newTitle = createEl('h2', "rev-h2", headerField.value);
-//   let newDate = createEl('h5', 'date', '30th Jan 2019');
-//   let newText = createEl('p', "", articleField.value);
-
-// // reset the text inside textfield after clicking Submit
-//   headerField.value = '';
-//   articleField.value = '';
-//   const parent=
-//   //return new Book(newDiv);
-// }
 
 
-// // Add functionality to Submit button to createArticle
-// const theButton = queSel('#submitBtn');
-// theButton.addEventListener('click', createBook);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
