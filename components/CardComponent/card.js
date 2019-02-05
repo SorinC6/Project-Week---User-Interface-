@@ -94,19 +94,6 @@ class Book {
         newDiv.appendChild(newName);
         newDiv.appendChild(newSUbject);
 
-
-        // let newDiv = createDiv('div', 'review-text');
-        // let newTitle = createEl('h2', "rev-h2", nameField.value);
-        // let newDate = createEl('h5', 'rev-data', '..th Jan 2019');
-        // let newText = createEl('p', "rev-text", subject.value);
-
-        // newDiv.appendChild(newTitle);
-        // newDiv.appendChild(newDate);
-        // newDiv.appendChild(newText);
-
-        // const formBody=this.domElement.querySelector('.articleForm');
-
-        // formBody.appendChild(newDiv);
     }
 }
 
@@ -115,44 +102,3 @@ books.forEach(item => {
     return new Book(item);
 })
 
-
-
-// const queSel = selector => document.querySelector(selector);
-// const headerField = queSel('#title');
-// const articleField = queSel('#articleText');
-// const reviewDiv = queSel('.button-review');
-
-// // Function to create review and return new Book class
-// const createBook = () => {
-
-//   const createDiv = (element, classname = "", text = "") => {
-//     const newDiv = document.createElement(element);
-//     newDiv.className = classname;
-//     newDiv.textContent = text;
-//     reviewDiv.appendChild(newDiv)
-//     return newDiv
-//   }
-
-//   const createEl = (element, classname = "", text = "") => {
-//     const newEl = document.createElement(element);
-//     newEl.className = classname;
-//     newEl.textContent = text;
-//     newDiv.appendChild(newEl)
-//   }
-
-//   let newDiv = createDiv('div', 'review-text');
-//   let newTitle = createEl('h2', "rev-h2", headerField.value);
-//   let newDate = createEl('h5', 'date', '30th Jan 2019');
-//   let newText = createEl('p', "", articleField.value);
-
-// // reset the text inside textfield after clicking Submit
-//   headerField.value = '';
-//   articleField.value = '';
-//   const parent=
-//   //return new Book(newDiv);
-// }
-
-
-// // Add functionality to Submit button to createArticle
-// const theButton = queSel('#submitBtn');
-// theButton.addEventListener('click', createBook);
