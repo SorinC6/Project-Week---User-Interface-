@@ -9,7 +9,7 @@ class Book {
         this.expandButton = domElement.querySelector('.button-overview');
         this.closeButton = domElement.querySelector('.btn-close-about');
 
-
+        
           // Get the modal
           this.modal = domElement.querySelector('#myModal');
         //console.log(this.modal);
@@ -18,6 +18,13 @@ class Book {
 
         //DeleteCardButton
         this.deteleCard=this.domElement.querySelector('.close-card-button');
+        this.domElement.addEventListener('mouseover',()=>{
+             this.deteleCard.style.display="block";
+        })
+        this.domElement.addEventListener('mouseout',()=>{
+            this.deteleCard.style.display="none";
+            
+       })
         //console.log(this.deteleCard);
 
         //EXAPND REVIEW BUTTONS

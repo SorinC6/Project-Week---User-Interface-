@@ -442,6 +442,7 @@ header #headerImg {
   position: absolute;
   right: 1%;
   cursor: pointer;
+  display: none;
 }
 .container .cards-container .card-holder .card-about {
   position: relative;
