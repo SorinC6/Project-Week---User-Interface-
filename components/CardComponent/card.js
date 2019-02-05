@@ -60,14 +60,14 @@ class Book {
 
         // card.classList.toggle('card-about-close');
 
-        console.log('expamnddd')
+        //console.log('expamnddd')
         
          // When the user clicks the button, open the modal 
          this.modal.style.display = "block";
 
          // Get the <span> element that closes the modal
         
-        console.log(this.span)
+        //console.log(this.span)
         //const span = domElement.querySelector('.close');
          // When the user clicks on <span> (x), close the modal
          this.span.addEventListener('click',()=>{
@@ -88,7 +88,7 @@ class Book {
     }
 
     expandRev() {
-        console.log('expand');
+        //console.log('expand');
         // ======== TODO for later ===============
         // books.forEach(item=>{
         //     const contentRev=item.querySelector('.review-Content');

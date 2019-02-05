@@ -314,6 +314,11 @@ header #headerImg {
   height: 250px;
   padding: 10px;
 }
+.container .cards-container .card-holder .card .content-one img:hover {
+  -webkit-transform: rotateZ(-5deg);
+  -ms-transform: rotateZ(-5deg);
+  transform: rotateZ(-5deg);
+}
 .container .cards-container .card-holder .card .content-one .share-buttons {
   margin-left: 10px;
 }
