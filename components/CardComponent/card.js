@@ -60,16 +60,9 @@ class Book {
 
         // card.classList.toggle('card-about-close');
 
-        //console.log('expamnddd')
-
-        // When the user clicks the button, open the modal 
         this.modal.style.display = "block";
 
-        // Get the <span> element that closes the modal
-
-        //console.log(this.span)
-        //const span = domElement.querySelector('.close');
-        // When the user clicks on <span> (x), close the modal
+        
         this.span.addEventListener('click', () => {
             this.modal.style.display = 'none';
         })
@@ -246,7 +239,7 @@ function showBooks() {
 TweenMax.from('.nav-content',4,{opacity:0});
 TweenMax.from('#headerImg',6,{opacity:0})
 TweenMax.from('.search-content',3,{scale:0,opacity:0});
-TweenMax.from('.card-holder',3,{x:-200,rotation:-160,scale:0})
+// TweenMax.from('.card-holder',3,{x:-200,rotation:-160,scale:0})
 
 
 const buttonOverview=document.querySelectorAll(' .button-overview').forEach(item=>{

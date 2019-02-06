@@ -366,13 +366,14 @@ header #headerImg {
 }
 @media (max-width: 500px) {
   .container .cards-container .card-holder .card .content-two {
-    max-width: 300px;
+    max-width: 200px;
   }
 }
 .container .cards-container .card-holder .card .content-two h2 {
   font-size: 18px;
   line-height: 1.2;
   margin-bottom: 3px;
+  flex-wrap: wrap;
 }
 @media (max-width: 500px) {
   .container .cards-container .card-holder .card .content-two h2 {
@@ -611,10 +612,9 @@ header #headerImg {
 /* The Modal (background) */
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
   /* Stay in place */
-  z-index: 20;
+  z-index: 10;
   /* Sit on top */
   padding-top: 100px;
   /* Location of the box */
@@ -649,8 +649,26 @@ header #headerImg {
 .modal-content h2 {
   font-weight: bold;
 }
+@media (max-width: 500px) {
+  .modal-content h2 {
+    font-size: 20px;
+  }
+}
+.modal-content h3 {
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  .modal-content h3 {
+    font-size: 20px;
+  }
+}
 .modal-content p {
   font-size: 20px;
+}
+@media (max-width: 500px) {
+  .modal-content p {
+    font-size: 15px;
+  }
 }
 /* Add Animation */
 @-webkit-keyframes animatetop {
