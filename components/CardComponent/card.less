@@ -20,7 +20,7 @@
 
 .container {
     font-size: 1.6rem;
-    max-width: 1000px;
+    max-width: 950px;
     margin: 0 auto; //border:1px solid red;
     .cards-container {
         padding-top: 50px;
@@ -28,6 +28,12 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        @media (max-width:900px){
+            display:flex;
+            justify-content: center;
+        }
+
         @media (max-width: 500px) {
             max-width:90%;
             margin: 0 auto;
@@ -36,7 +42,7 @@
         .card-holder {
             position: relative; //display: flex; //flex-direction: column;
             margin-bottom: 30px;
-            
+
             @media (max-width: 500px) {
                 display: flex;
                 flex-direction: column;
@@ -45,8 +51,7 @@
                 position: relative;
                 display: flex;
                 justify-content: center;
-                width: 470px;
-                height: 400px;
+                width: 450px;
                 border: 1px solid black;
                 box-shadow: 10px 8px 10px grey;
                 background: #E5DAE0;
@@ -54,7 +59,6 @@
                     display: flex;
                     flex-direction: column;
                     padding: 10px; //width:210px;
-                    width:170px;
                     img {
                         //padding:10px 20px;
                         max-width: 150px;
