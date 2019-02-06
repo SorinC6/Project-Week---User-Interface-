@@ -72,8 +72,13 @@ header .nav-content img:hover {
 header #headerImg {
   margin-top: 60px;
   border-radius: 20px;
-  max-width: 1300px;
+  width: 90%;
   height: auto;
+}
+@media (max-width: 900px) {
+  header #headerImg {
+    max-width: 100%;
+  }
 }
 @media (max-width: 500px) {
   header #headerImg {
@@ -259,6 +264,11 @@ header #headerImg {
   max-width: 950px;
   margin: 0 auto;
 }
+@media (max-width: 500px) {
+  .container {
+    width: 60%;
+  }
+}
 .container .cards-container {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -292,11 +302,16 @@ header #headerImg {
 .container .cards-container .card-holder .card {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 450px;
   border: 1px solid black;
   box-shadow: 10px 8px 10px grey;
   background: #E5DAE0;
+}
+@media (max-width: 500px) {
+  .container .cards-container .card-holder .card {
+    max-width: 400px;
+  }
 }
 .container .cards-container .card-holder .card .content-one {
   display: flex;
@@ -349,15 +364,30 @@ header #headerImg {
 .container .cards-container .card-holder .card .content-two {
   padding: 0px;
 }
+@media (max-width: 500px) {
+  .container .cards-container .card-holder .card .content-two {
+    max-width: 300px;
+  }
+}
 .container .cards-container .card-holder .card .content-two h2 {
   font-size: 18px;
   line-height: 1.2;
   margin-bottom: 3px;
 }
+@media (max-width: 500px) {
+  .container .cards-container .card-holder .card .content-two h2 {
+    font-size: 14px;
+  }
+}
 .container .cards-container .card-holder .card .content-two h3 {
   font-size: 15px;
   margin-top: 0px;
   margin-bottom: 4px;
+}
+@media (max-width: 500px) {
+  .container .cards-container .card-holder .card .content-two h3 {
+    font-size: 12px;
+  }
 }
 .container .cards-container .card-holder .card .content-two p {
   margin-left: 20px;
@@ -391,11 +421,12 @@ header #headerImg {
   max-width: 10px;
 }
 .container .cards-container .card-holder .card .content-two .choose-buyer {
-  display: flex;
   flex-direction: column;
+  padding-top: 20px;
   height: 100px;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  padding-left: 10px;
 }
 .container .cards-container .card-holder .card .content-two .choose-buyer input {
   width: 30px;
@@ -417,12 +448,17 @@ header #headerImg {
   font-size: 25px;
   margin-left: 4px;
 }
+@media (max-width: 500px) {
+  .container .cards-container .card-holder .card .content-two .wishlist .wish label {
+    font-size: 16px;
+  }
+}
 .container .cards-container .card-holder .card .button-overview {
   position: absolute;
   display: flex;
   flex-wrap: wrap;
   height: 190px;
-  width: 20px;
+  width: 28px;
   float: left;
   top: 40%;
   right: 0;
@@ -435,6 +471,7 @@ header #headerImg {
 .container .cards-container .card-holder .card .button-overview:hover {
   color: white;
   background: black;
+  width: 30px;
 }
 .container .cards-container .card-holder .card .button-reviews {
   position: absolute;

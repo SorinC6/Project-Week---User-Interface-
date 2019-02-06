@@ -249,7 +249,16 @@ TweenMax.from('.search-content',3,{scale:0,opacity:0});
 TweenMax.from('.card-holder',3,{x:-200,rotation:-160,scale:0})
 
 
-
+const buttonOverview=document.querySelectorAll(' .button-overview').forEach(item=>{
+    item.addEventListener('mouseover',function(){
+        TweenMax.to(item,1,{width:'60px'})
+        item.textContent='Expand';
+    })
+    item.addEventListener('mouseout',function(){
+        TweenMax.to(item,1,{width:'20px'})
+        item.textContent='E x p a n d'
+    })
+})
 
 
 

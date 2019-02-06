@@ -22,6 +22,10 @@
     font-size: 1.6rem;
     max-width: 950px;
     margin: 0 auto; //border:1px solid red;
+
+    @media (max-width:500px){
+        width:60%;
+    }
     .cards-container {
         padding-top: 50px;
         padding-bottom: 50px;
@@ -38,6 +42,7 @@
             max-width:90%;
             margin: 0 auto;
             padding-top: 30px;
+           
         }
         .card-holder {
             position: relative; //display: flex; //flex-direction: column;
@@ -50,11 +55,14 @@
             .card {
                 position: relative;
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 width: 450px;
                 border: 1px solid black;
                 box-shadow: 10px 8px 10px grey;
                 background: #E5DAE0;
+                @media (max-width:500px){
+                    max-width:400px;
+                }
                 .content-one {
                     display: flex;
                     flex-direction: column;
@@ -107,15 +115,24 @@
                 }
                 .content-two {
                     padding: 0px; // border:1px solid red;
+                    @media (max-width:500px){
+                        max-width:300px;
+                    }
                     h2 {
                         font-size: 18px;
                         line-height: 1.2;
                         margin-bottom: 3px;
+                        @media (max-width:500px){
+                            font-size: 14px;
+                        }
                     }
                     h3 {
                         font-size: 15px;
                         margin-top: 0px;
                         margin-bottom: 4px;
+                        @media (max-width:500px){
+                            font-size: 12px;
+                        }
                     }
                     p {
                         margin-left: 20px;
@@ -148,11 +165,13 @@
                     
                     }
                     .choose-buyer {
-                        display: flex;
-                        flex-direction: column;
-                        height: 100px;
-                        justify-content: space-between;
-                        align-items: center;
+                         //display: flex;
+                         flex-direction: column;
+                         padding-top:20px;
+                         height: 100px;
+                         justify-content: flex-start;
+                         align-items: center;
+                         padding-left:10px;
                         input {
                             width: 30px;
                         }
@@ -167,10 +186,14 @@
                             font-size: 25px;
                             outline: none;
                             cursor: pointer;
+                            
                             label {
                                 color: black;
                                 font-size: 25px;
                                 margin-left: 4px;
+                                @media (max-width:500px){
+                                    font-size: 16px;
+                                }
                             }
                         }
                     }
@@ -181,7 +204,7 @@
                     display: flex;
                     flex-wrap: wrap; // width: 15px;
                     height: 190px;
-                    width: 20px;
+                    width: 28px;
                     float: left;
                     top: 40%; //left: 50%;
                     right: 0; //transform: translate(-50%, -50%);
@@ -193,6 +216,7 @@
                     &:hover {
                         color: white;
                         background: black;
+                        width:30px;
                     }
                 }
                 .button-reviews {
