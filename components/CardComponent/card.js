@@ -241,4 +241,18 @@ function showBooks() {
 
 
 
+//===============================GASP ANIMATION CREATE TIMELINE FOR LOAD PAGE======
+
+TweenMax.from('.nav-content',4,{opacity:0});
+TweenMax.from('#headerImg',6,{opacity:0})
+TweenMax.from('.search-content',3,{scale:0,opacity:0});
+TweenMax.from('.card-holder',3,{x:-200,rotation:-160,scale:0})
+
+
+
+
+
+
+
+
 
