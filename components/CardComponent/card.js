@@ -98,7 +98,7 @@ class Book {
     }
 
     submitRev() {
-        console.log('Submited');
+        //console.log('Submited');
         const nameField = this.domElement.querySelector('#title');
         const subject = this.domElement.querySelector('#articleText');
         const reviewDiv = this.domElement.querySelector('.articleForm');
@@ -205,7 +205,7 @@ class Books {
 }
 
 const allBooks = new Books();
-console.log(allBooks)
+//console.log(allBooks)
 
 const dataList = document.querySelector('#booksName');
 

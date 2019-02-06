@@ -1,5 +1,4 @@
 const imgNavBtn = document.querySelector('#hamburgerImg');
-//console.log(imgNavBtn);
 const body = document.querySelector('body');
 const expanded=document.querySelector('.transparent');
 //console.log(expanded);
