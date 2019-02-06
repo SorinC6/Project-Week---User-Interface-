@@ -1,89 +1,79 @@
 //===========================STAR RATING ================
 .rate {
-    float: right;
-    height: 46px;
-    padding: 0 10px;
-    left: 0;
-}
-
-.rate:not(:checked)>input {
-    position: absolute;
-    top: -9999px;
-}
-
-.rate:not(:checked)>label {
-    float: right;
-    width: 1em;
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-    font-size: 30px;
-    color: #ccc;
-}
-
-.rate:not(:checked)>label:before {
-    content: '★ ';
-}
-
-.rate>input:checked~label {
-    color: #ffc700;
-}
-
-.rate:not(:checked)>label:hover,
-.rate:not(:checked)>label:hover~label {
-    color: #deb217;
-}
-
-.rate>input:checked+label:hover,
-.rate>input:checked+label:hover~label,
-.rate>input:checked~label:hover,
-.rate>input:checked~label:hover~label,
-.rate>label:hover~input:checked~label {
-    color: #c59b08;
+    input {
+        border: 0;
+        font-size: 25px;
+        max-width: 10%;
+        color: rgb(80, 38, 38);
+        outline: none;
+        cursor: pointer;
+        background-color: transparent;
+        text-align: center;
+    }
+    input:hover {
+        color: #deb217;
+    }
+    .full-star {
+        color: #ffc700;
+    }
 }
 
 .container {
     font-size: 1.6rem;
     max-width: 950px;
     margin: 0 auto; //border:1px solid red;
+
+    @media (max-width:500px){
+        //max-width:30%;
+    }
     .cards-container {
         padding-top: 50px;
         padding-bottom: 50px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        @media (max-width:900px){
+            display:flex;
+            justify-content: center;
+        }
+
         @media (max-width: 500px) {
             max-width:90%;
             margin: 0 auto;
             padding-top: 30px;
+           
         }
         .card-holder {
-            position:relative;
-            display: flex; //flex-direction: column;
+            position: relative; //display: flex; //flex-direction: column;
             margin-bottom: 30px;
-            background: #E5DAE0;
 
             @media (max-width: 500px) {
                 display: flex;
                 flex-direction: column;
+                max-width:70%;
             }
             .card {
                 position: relative;
                 display: flex;
-                justify-content: center;
-                max-width: 450px;
+                justify-content: space-between;
+                width: 450px;
                 border: 1px solid black;
                 box-shadow: 10px 8px 10px grey;
+                background: #E5DAE0;
+                @media (max-width:500px){
+                    max-width:400px;
+                }
                 .content-one {
                     display: flex;
                     flex-direction: column;
-                    padding: 10px;
+                    padding: 10px; //width:210px;
                     img {
                         //padding:10px 20px;
                         max-width: 150px;
                         height: 250px;
                         padding: 10px;
-                        &:hover{
+                        &:hover {
                             -webkit-transform: rotateZ(-05deg);
                             -ms-transform: rotateZ(-05deg);
                             transform: rotateZ(-05deg);
@@ -120,21 +110,31 @@
                             -moz-box-shadow: 0px 2px 10px -10px rgba(0, 0, 0, 0.27);
                             box-shadow: 5px 5px -5px rgba(0, 0, 0, 0.27);
                             transition: all 0s ease 0s;
-                            padding:2px;
+                            padding: 2px;
                         }
                     }
                 }
                 .content-two {
                     padding: 0px; // border:1px solid red;
+                    @media (max-width:500px){
+                        max-width:200px;
+                    }
                     h2 {
                         font-size: 18px;
                         line-height: 1.2;
                         margin-bottom: 3px;
+                        flex-wrap: wrap;
+                        @media (max-width:500px){
+                            font-size: 14px;
+                        }
                     }
                     h3 {
                         font-size: 15px;
                         margin-top: 0px;
                         margin-bottom: 4px;
+                        @media (max-width:500px){
+                            font-size: 12px;
+                        }
                     }
                     p {
                         margin-left: 20px;
@@ -149,11 +149,15 @@
                     }
                     .rating-review {
                         display: flex;
+                        flex-wrap: wrap;
                         input {
                             border: 0;
-                            width: 40px;
+                            width: 60px;
+                            outline: none;
                             padding-right: 2px;
                             text-align: center;
+                            cursor: pointer;
+                            background: transparent;
                         }
                         #ratings {
                             border-right: 1px solid black;
@@ -161,32 +165,49 @@
                         #reviews {
                             max-width: 10px;
                         }
-                    }
-                    .wishlist {
-                        //color:red;
-                        cursor: pointer;
-                        span {
-                            color: purple;
-                            font-size: 25px;
-                        }
+                    
                     }
                     .choose-buyer {
-                        display: flex;
-                        flex-direction: column;
-                        height: 100px;
-                        justify-content: space-between;
-                        align-items: center;
+                         //display: flex;
+                         flex-direction: column;
+                         padding-top:20px;
+                         height: 100px;
+                         justify-content: flex-start;
+                         align-items: center;
+                         padding-left:10px;
                         input {
                             width: 30px;
                         }
                     }
+                    .wishlist {
+                        cursor: pointer;
+                        .wish {
+                            border: 0;
+                            color: red;
+                            background-color: transparent;
+                            width: 250px;
+                            font-size: 25px;
+                            outline: none;
+                            cursor: pointer;
+                            
+                            label {
+                                color: black;
+                                font-size: 25px;
+                                margin-left: 4px;
+                                @media (max-width:500px){
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                   
                 }
                 .button-overview {
                     position: absolute;
                     display: flex;
                     flex-wrap: wrap; // width: 15px;
                     height: 190px;
-                    width: 20px;
+                    width: 28px;
                     float: left;
                     top: 40%; //left: 50%;
                     right: 0; //transform: translate(-50%, -50%);
@@ -198,6 +219,7 @@
                     &:hover {
                         color: white;
                         background: black;
+                        width:30px;
                     }
                 }
                 .button-reviews {
@@ -216,11 +238,18 @@
                     }
                 }
             }
-            .close-card-button{
+            .close-card-button {
                 position: absolute;
-                right:1%;
-                cursor:pointer;
-                display:none;
+                right: 1%;
+                top: 0;
+                cursor: pointer;
+                display: none;
+                @media (max-width:500px){
+                    left:1%;
+                }
+                @media (max-width:400px){
+                    left:10%;
+                }
             }
             .card-about {
                 //display:none;
@@ -274,10 +303,7 @@
     }
 }
 
-.card-about-close {
-    display: none;
-}
-
+.card-about-close,
 .review-open {
     display: none;
 }
@@ -348,82 +374,170 @@
     }
 }
 
-
 /* The Modal (background) */
+
 .modal {
-    display: none; /* Hidden by default */
+    display:none;
+//     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 20; /* Sit on top */
+    z-index: 10; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    // display: none;
+    // /* Hidden by default */
+    // position: fixed;
+    // /* Stay in place */
+    // z-index: 20;
+    // /* Sit on top */
+    // padding-top: 100px;
+    // /* Location of the box */
+    // left: 0;
+    // top: 0;
+    // width: 100%;
+    // /* Full width */
+    // height: 100%;
+    // /* Full height */
+    // overflow: auto;
+    // /* Enable scroll if needed */
+    // background-color: rgb(0, 0, 0);
+    // /* Fallback color */
+    // background-color: rgba(0, 0, 0, 0.4);
+    // /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
     width: 70%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
     font-family: 'Roboto', sans-serif;
-    h2{
-       font-weight: bold;
-       //color:red; 
+    h2 {
+        font-weight: bold; //color:red; 
+        @media (max-width:500px){
+            font-size:20px;
+        }
     }
-    p{
+    h3 {
+        font-weight: bold; //color:red; 
+        @media (max-width:500px){
+            font-size:20px;
+        }
+    }
+    p {
         font-size: 20px;
-        
+        @media (max-width:500px){
+            font-size:15px;
+        }
     }
-  }
-  
-  /* Add Animation */
-  @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-  }
-  
-  @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+
+.close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
-  
-  .modal-header {
+}
+
+.modal-header {
     padding: 2px 16px;
     background-color: #AB8FBF;
     color: white;
-  }
-  
-  .modal-body {padding: 2px 16px;}
-  
-  .modal-footer {
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
     padding: 2px 16px;
     background-color: #AB8FBF;
     color: white;
-  }
+}
+
+//==============================TEST=====
+.container{
+    @media (max-width:400px){
+        width:60%;
+        //margin:10px;
+    }
+}
+
+.cards-container{
+    @media (max-width:400px){
+        max-width: 300px;
+        padding:0;
+    }
+}
+
+
+
+
+
+
+.content-two{
+    @media (max-width:400px){
+        max-width: 200px;
+        margin:0;
+        padding:0;
+        //background: red;
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .rating-review{
+        @media (max-width:400px){
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
