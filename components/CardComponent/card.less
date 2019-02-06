@@ -24,7 +24,7 @@
     margin: 0 auto; //border:1px solid red;
 
     @media (max-width:500px){
-        width:60%;
+        //max-width:30%;
     }
     .cards-container {
         padding-top: 50px;
@@ -51,6 +51,7 @@
             @media (max-width: 500px) {
                 display: flex;
                 flex-direction: column;
+                max-width:70%;
             }
             .card {
                 position: relative;
@@ -148,6 +149,7 @@
                     }
                     .rating-review {
                         display: flex;
+                        flex-wrap: wrap;
                         input {
                             border: 0;
                             width: 60px;
@@ -242,6 +244,12 @@
                 top: 0;
                 cursor: pointer;
                 display: none;
+                @media (max-width:500px){
+                    left:1%;
+                }
+                @media (max-width:400px){
+                    left:10%;
+                }
             }
             .card-about {
                 //display:none;
@@ -494,3 +502,42 @@
     background-color: #AB8FBF;
     color: white;
 }
+
+//==============================TEST=====
+.container{
+    @media (max-width:400px){
+        width:60%;
+        //margin:10px;
+    }
+}
+
+.cards-container{
+    @media (max-width:400px){
+        max-width: 300px;
+        padding:0;
+    }
+}
+
+
+
+
+
+
+.content-two{
+    @media (max-width:400px){
+        max-width: 200px;
+        margin:0;
+        padding:0;
+        //background: red;
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .rating-review{
+        @media (max-width:400px){
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+

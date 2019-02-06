@@ -265,9 +265,6 @@ header #headerImg {
   margin: 0 auto;
 }
 @media (max-width: 500px) {
-  .container {
-    width: 60%;
-  }
 }
 .container .cards-container {
   padding-top: 50px;
@@ -297,6 +294,7 @@ header #headerImg {
   .container .cards-container .card-holder {
     display: flex;
     flex-direction: column;
+    max-width: 70%;
   }
 }
 .container .cards-container .card-holder .card {
@@ -405,6 +403,7 @@ header #headerImg {
 }
 .container .cards-container .card-holder .card .content-two .rating-review {
   display: flex;
+  flex-wrap: wrap;
 }
 .container .cards-container .card-holder .card .content-two .rating-review input {
   border: 0;
@@ -495,6 +494,16 @@ header #headerImg {
   top: 0;
   cursor: pointer;
   display: none;
+}
+@media (max-width: 500px) {
+  .container .cards-container .card-holder .close-card-button {
+    left: 1%;
+  }
+}
+@media (max-width: 400px) {
+  .container .cards-container .card-holder .close-card-button {
+    left: 10%;
+  }
 }
 .container .cards-container .card-holder .card-about {
   position: relative;
@@ -716,6 +725,33 @@ header #headerImg {
   padding: 2px 16px;
   background-color: #AB8FBF;
   color: white;
+}
+@media (max-width: 400px) {
+  .container {
+    width: 60%;
+  }
+}
+@media (max-width: 400px) {
+  .cards-container {
+    max-width: 300px;
+    padding: 0;
+  }
+}
+@media (max-width: 400px) {
+  .content-two {
+    max-width: 200px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 400px) {
+  .content-two .rating-review {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .footer-content {
   display: flex;
