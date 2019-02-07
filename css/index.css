@@ -287,8 +287,8 @@ header #headerImg {
   }
 }
 .container .cards-container .card-holder {
-  position: relative;
   margin-bottom: 30px;
+  position: relative;
 }
 @media (max-width: 500px) {
   .container .cards-container .card-holder {
@@ -532,10 +532,23 @@ header #headerImg {
   background: black;
 }
 .container .cards-container .review-content {
+  position: absolute;
+  background: #FFF7FD;
+  z-index: 10 !important;
   padding: 0 10px;
-  width: 80%;
+  padding-right: 10px;
   padding-bottom: 20px;
+  max-width: 430px;
+  padding-right: 25px;
   font-size: 20px;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+@media (max-width: 500px) {
+  .container .cards-container .review-content {
+    max-width: 85%;
+  }
 }
 .container .cards-container .review-content .review-close {
   padding: 1%;
@@ -780,7 +793,6 @@ header #headerImg {
   }
 }
 .footer-content h3 {
-  font-weight: regular;
   font-size: 20px;
   line-height: 4px;
   color: white;
@@ -920,4 +932,12 @@ header #headerCont {
   background-color: #0062cc;
   border: none;
   cursor: pointer;
+}
+.btnContact {
+  font-size: 20px;
+}
+@media (max-width: 500px) {
+  .btnContact {
+    font-size: 15px;
+  }
 }

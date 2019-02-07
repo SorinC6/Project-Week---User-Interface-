@@ -88,6 +88,9 @@ class Book {
         //     contentRev.classList.add('review-open')
 
         // })
+        const reviewCont=this.domElement.querySelector('.review-content')
+        TweenMax.from(reviewCont,2,{ top:'-10%' , ease: Elastic.easeOut })
+        //TweenMax.from(".review-content", 1, {scale:2.4,x:150}, 0);
         const content = this.domElement.querySelector('.review-content');
         //console.log(content);
         content.classList.toggle('review-open');
@@ -240,7 +243,6 @@ TweenMax.from('.nav-content',4,{opacity:0});
 TweenMax.from('#headerImg',6,{opacity:0})
 TweenMax.from('.search-content',3,{scale:0,opacity:0});
 //TweenMax.from('.card-holder',3,{x:-200,rotation:-160,scale:0,zIndex:0})
-
 
 const buttonOverview=document.querySelectorAll(' .button-overview').forEach(item=>{
     item.addEventListener('mouseover',function(){
