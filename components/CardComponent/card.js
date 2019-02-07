@@ -89,7 +89,7 @@ class Book {
 
         // })
         const reviewCont=this.domElement.querySelector('.review-content')
-        TweenMax.from(reviewCont,2,{ top:'-10%' , ease: Elastic.easeOut })
+        TweenMax.from(reviewCont,2,{ top:'-20%' , ease: Elastic.easeOut })
         //TweenMax.from(".review-content", 1, {scale:2.4,x:150}, 0);
         const content = this.domElement.querySelector('.review-content');
         //console.log(content);
@@ -247,11 +247,11 @@ TweenMax.from('.search-content',3,{scale:0,opacity:0});
 const buttonOverview=document.querySelectorAll(' .button-overview').forEach(item=>{
     item.addEventListener('mouseover',function(){
         TweenMax.to(item,1,{width:'60px'})
-        item.textContent='Expand';
+        item.textContent='INFO';
     })
     item.addEventListener('mouseout',function(){
         TweenMax.to(item,1,{width:'20px'})
-        item.textContent='E x p a n d'
+        item.textContent='I N F O'
     })
 })
 
