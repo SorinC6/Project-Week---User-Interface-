@@ -1,4 +1,5 @@
 //=================CARD EXPAND OVERVIEW FUnctionality=============
+//import swal from 'sweetalert';
 
 class Book {
     constructor(domElement) {
@@ -109,7 +110,12 @@ class Book {
         const newDiv = document.createElement('div');
         newDiv.className = 'review-text';
         //newDiv.textContent = text;
-        reviewDiv.appendChild(newDiv)
+        if(subject.value === ''){
+            //alert('Enter a name and a subject');
+            swal("Empty input", "please enter a name and a subject!");
+        }
+        else
+            reviewDiv.appendChild(newDiv)
 
         const newSpan = document.createElement('span');
         newSpan.textContent = "From:";
