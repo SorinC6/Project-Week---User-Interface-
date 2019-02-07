@@ -222,7 +222,7 @@ header #headerImg {
   display: flex;
   justify-content: center;
   margin: 20px auto;
-  width: 130px;
+  width: 150px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -287,8 +287,8 @@ header #headerImg {
   }
 }
 .container .cards-container .card-holder {
-  position: relative;
   margin-bottom: 30px;
+  position: relative;
 }
 @media (max-width: 500px) {
   .container .cards-container .card-holder {
@@ -372,6 +372,8 @@ header #headerImg {
   line-height: 1.2;
   margin-bottom: 3px;
   flex-wrap: wrap;
+  max-width: 80%;
+  padding-bottom: 5px;
 }
 @media (max-width: 500px) {
   .container .cards-container .card-holder .card .content-two h2 {
@@ -532,10 +534,23 @@ header #headerImg {
   background: black;
 }
 .container .cards-container .review-content {
+  position: absolute;
+  background: #FFF7FD;
+  z-index: 10 !important;
   padding: 0 10px;
-  width: 80%;
+  padding-right: 10px;
   padding-bottom: 20px;
+  max-width: 430px;
+  padding-right: 25px;
   font-size: 20px;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+@media (max-width: 500px) {
+  .container .cards-container .review-content {
+    max-width: 85%;
+  }
 }
 .container .cards-container .review-content .review-close {
   padding: 1%;
@@ -780,7 +795,6 @@ header #headerImg {
   }
 }
 .footer-content h3 {
-  font-weight: regular;
   font-size: 20px;
   line-height: 4px;
   color: white;
@@ -871,132 +885,61 @@ header #headerCont {
   max-height: 100%;
   border-radius: 10px;
 }
-.background {
-  width: 60%;
-  margin: 0 auto;
-  border-radius: 20px;
+.contact-form {
+  padding-top: 100px;
+  background: #fff;
+  margin-top: 0;
+  margin-bottom: 5%;
+  width: 70%;
 }
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1MmgVxIIzc.ttf) format('truetype');
+.contact-form .form-control {
+  border-radius: 1rem;
 }
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc9.ttf) format('truetype');
+.contact-image {
+  text-align: center;
 }
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+.contact-image img {
+  border-radius: 6rem;
+  width: 11%;
+  margin-top: -3%;
+  transform: rotate(29deg);
 }
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc9.ttf) format('truetype');
+.contact-form form {
+  padding: 14%;
 }
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+.contact-form form .row {
+  margin-bottom: -7%;
 }
-* {
-  font-family: "Roboto";
+.contact-form h3 {
+  margin-bottom: 8%;
+  margin-top: -10%;
+  text-align: center;
+  color: #0062cc;
 }
-.background {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: #225faa;
-  background: linear-gradient(135deg, #BEF4F7 0%, #f7c1be 100%);
-  overflow: scroll;
-  perspective: 1000px;
+.contact-form .btnContact {
+  width: 50%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5%;
+  background: #dc3545;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
 }
-.container1 {
-  width: 90%;
-  max-width: 500px;
-  margin: 150px auto;
-  transform: rotateX(20deg);
+.btnContactSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  color: #fff;
+  background-color: #0062cc;
+  border: none;
+  cursor: pointer;
 }
-.outer {
-  font-weight: 100;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  text-shadow: 0px 2px 1px #aaa;
-  font-size: 2em;
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 40px;
-  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+.btnContact {
+  font-size: 20px;
 }
-.outer .outer-content {
-  z-index: 1;
-}
-.outer .outer-corner {
-  height: 40px;
-  width: 40px;
-  border-right: 5px solid rgba(255, 255, 255, 0.5);
-  border-top: 5px solid white;
-  position: absolute;
-  right: -30px;
-  top: -30px;
-}
-.main {
-  background: linear-gradient(to bottom, transparent, white 40px);
-  transform: translateY(-40px);
-  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-.main p {
-  margin: 0px;
-  font-weight: 300;
-}
-.main p.st {
-  margin-top: 20px;
-  margin-bottom: 5px;
-  font-weight: 700;
-}
-.main p.st:first-of-type {
-  margin-top: 0px;
-}
-.main .pd {
-  padding: 40px;
-}
-.main .map {
-  width: 200px;
-  height: 200px;
-  background: url("https://s32.postimg.org/rienefced/Ultra_Light_with_Labels_Snazzy_Maps_Free_Sty.png");
-  background-size: 220%;
-  -webkit-filter: contrast(100%);
-  position: absolute;
-  right: -20px;
-  top: 20px;
-  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
-}
-.main .img {
-  position: absolute;
-  bottom: 0;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  background: url(https://images.unsplash.com/photo-1452110040644-6751c0c95836?crop=entropy&dpr=2&fit=crop&fm=jpg&h=825&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450);
-  background-size: cover;
-  width: 100%;
-  height: 10px;
-}
-.main .main-outer {
-  height: 40px;
-  width: 40px;
-  border-left: 5px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 5px solid white;
-  position: absolute;
-  left: -30px;
-  bottom: -30px;
+@media (max-width: 500px) {
+  .btnContact {
+    font-size: 15px;
+  }
 }

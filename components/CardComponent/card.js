@@ -1,4 +1,5 @@
 //=================CARD EXPAND OVERVIEW FUnctionality=============
+//import swal from 'sweetalert';
 
 class Book {
     constructor(domElement) {
@@ -88,6 +89,9 @@ class Book {
         //     contentRev.classList.add('review-open')
 
         // })
+        const reviewCont=this.domElement.querySelector('.review-content')
+        TweenMax.from(reviewCont,2,{ top:'-20%' , ease: Elastic.easeOut })
+        //TweenMax.from(".review-content", 1, {scale:2.4,x:150}, 0);
         const content = this.domElement.querySelector('.review-content');
         //console.log(content);
         content.classList.toggle('review-open');
@@ -106,7 +110,12 @@ class Book {
         const newDiv = document.createElement('div');
         newDiv.className = 'review-text';
         //newDiv.textContent = text;
-        reviewDiv.appendChild(newDiv)
+        if(subject.value === ''){
+            //alert('Enter a name and a subject');
+            swal("Empty input", "please enter a name and a subject!");
+        }
+        else
+            reviewDiv.appendChild(newDiv)
 
         const newSpan = document.createElement('span');
         newSpan.textContent = "From:";
@@ -241,15 +250,14 @@ TweenMax.from('#headerImg',6,{opacity:0})
 TweenMax.from('.search-content',3,{scale:0,opacity:0});
 //TweenMax.from('.card-holder',3,{x:-200,rotation:-160,scale:0,zIndex:0})
 
-
 const buttonOverview=document.querySelectorAll(' .button-overview').forEach(item=>{
     item.addEventListener('mouseover',function(){
         TweenMax.to(item,1,{width:'60px'})
-        item.textContent='Expand';
+        item.textContent='INFO';
     })
     item.addEventListener('mouseout',function(){
         TweenMax.to(item,1,{width:'20px'})
-        item.textContent='E x p a n d'
+        item.textContent='I N F O'
     })
 })
 
