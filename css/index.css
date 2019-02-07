@@ -372,6 +372,8 @@ header #headerImg {
   line-height: 1.2;
   margin-bottom: 3px;
   flex-wrap: wrap;
+  max-width: 80%;
+  padding-bottom: 5px;
 }
 @media (max-width: 500px) {
   .container .cards-container .card-holder .card .content-two h2 {
