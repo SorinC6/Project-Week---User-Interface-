@@ -29,7 +29,7 @@ const aTag = document.querySelectorAll('a')
 aTag.forEach(item => {
   item.addEventListener('mouseover', function () {
     // item.style.color='red';
-    TweenMax.to(item, 1, { fontSize: 25 })
+    TweenMax.to(item, 0.1, { fontSize: 20 })
     TweenMax.to(item, 1, { color: 'black' })
   })
 
