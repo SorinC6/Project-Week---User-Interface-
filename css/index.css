@@ -136,6 +136,10 @@ header #headerImg {
 .expandedText p:hover {
   color: purple;
 }
+.contact-nav {
+  padding: 40px;
+  font-size: 10px;
+}
 .container {
   font-size: 1.6rem;
   max-width: 800px;
@@ -374,6 +378,7 @@ header #headerImg {
   flex-wrap: wrap;
   max-width: 80%;
   padding-bottom: 5px;
+  font-family: 'Raleway', sans-serif;
 }
 @media (max-width: 500px) {
   .container .cards-container .card-holder .card .content-two h2 {
@@ -384,6 +389,7 @@ header #headerImg {
   font-size: 15px;
   margin-top: 0px;
   margin-bottom: 4px;
+  font-family: 'Raleway', sans-serif;
 }
 @media (max-width: 500px) {
   .container .cards-container .card-holder .card .content-two h3 {
@@ -394,6 +400,7 @@ header #headerImg {
   margin-left: 20px;
   font-size: 14px;
   align-items: center;
+  font-family: 'Raleway', sans-serif;
 }
 @media (max-width: 500px) {
   .container .cards-container .card-holder .card .content-two p {
@@ -404,17 +411,28 @@ header #headerImg {
   width: 70%;
 }
 .container .cards-container .card-holder .card .content-two .rating-review {
+  border-left: 3px solid lightgrey;
   display: flex;
   flex-wrap: wrap;
+}
+.container .cards-container .card-holder .card .content-two .rating-review p {
+  font-size: 15px;
+  padding: 0;
+  margin: 10px;
+  font-family: 'Raleway', sans-serif;
 }
 .container .cards-container .card-holder .card .content-two .rating-review input {
   border: 0;
   width: 60px;
   outline: none;
+  font-size: 12px;
   padding-right: 2px;
   text-align: center;
   cursor: pointer;
   background: transparent;
+}
+.container .cards-container .card-holder .card .content-two .rating-review #reviews {
+  font-size: 14px;
 }
 .container .cards-container .card-holder .card .content-two .rating-review #ratings {
   border-right: 1px solid black;
@@ -423,15 +441,49 @@ header #headerImg {
   max-width: 10px;
 }
 .container .cards-container .card-holder .card .content-two .choose-buyer {
+  position: absolute;
   flex-direction: column;
-  padding-top: 20px;
+  padding-top: 10px;
   height: 100px;
   justify-content: flex-start;
   align-items: center;
   padding-left: 10px;
+  color: purple;
+}
+.container .cards-container .card-holder .card .content-two .choose-buyer h2 {
+  font-family: 'Raleway', sans-serif;
+}
+.container .cards-container .card-holder .card .content-two .choose-buyer select {
+  background-color: grey;
+  padding: 60px;
+  font-size: 15px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+.container .cards-container .card-holder .card .content-two .choose-buyer select:after {
+  content: '\f078';
+  font: normal normal normal 17px/1 FontAwesome;
+  color: #0ebeff;
+  right: 11px;
+  top: 6px;
+  height: 34px;
+  padding: 15px 0px 0px 8px;
+  border-left: 1px solid #0ebeff;
+  position: absolute;
+  pointer-events: none;
 }
 .container .cards-container .card-holder .card .content-two .choose-buyer input {
-  width: 30px;
+  width: 50px;
+  outline: none;
+  font-size: 20px;
+  border: 0;
+  background-color: transparent;
+  margin: 4px;
+  color: purple;
+  border: 1px solid black;
+}
+.container .cards-container .card-holder .card .content-two .choose-buyer .opclass {
+  color: red;
 }
 .container .cards-container .card-holder .card .content-two .wishlist {
   cursor: pointer;
@@ -447,7 +499,8 @@ header #headerImg {
 }
 .container .cards-container .card-holder .card .content-two .wishlist .wish label {
   color: black;
-  font-size: 25px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
   margin-left: 4px;
 }
 @media (max-width: 500px) {

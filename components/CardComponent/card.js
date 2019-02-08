@@ -2,215 +2,259 @@
 //import swal from 'sweetalert';
 
 class Book {
-    constructor(domElement) {
-        this.domElement = domElement;
-        //console.log(this.domElement);
+	constructor(domElement) {
+		this.domElement = domElement;
+		//console.log(this.domElement);
 
-        //Expand OVERVIEW BUTTONS
-        this.expandButton = domElement.querySelector('.button-overview');
-        this.closeButton = domElement.querySelector('.btn-close-about');
+		//Expand OVERVIEW BUTTONS
+		this.expandButton = domElement.querySelector('.button-overview');
+		this.closeButton = domElement.querySelector('.btn-close-about');
 
+		// Get the modal
+		this.modal = domElement.querySelector('#myModal');
+		//console.log(this.modal);
+		this.span = domElement.querySelector('.close');
 
-        // Get the modal
-        this.modal = domElement.querySelector('#myModal');
-        //console.log(this.modal);
-        this.span = domElement.querySelector('.close');
+		//DeleteCardButton
+		this.deteleCard = this.domElement.querySelector('.close-card-button');
+		this.domElement.addEventListener('mouseover', () => {
+			this.deteleCard.style.display = 'block';
+		});
+		this.domElement.addEventListener('mouseout', () => {
+			this.deteleCard.style.display = 'none';
+		});
+		//console.log(this.deteleCard);
 
+		//EXAPND REVIEW BUTTONS
+		this.expandReview = domElement.querySelector('.button-reviews');
+		this.closeReviews = domElement.querySelector('.review-close');
+		this.contentR = domElement.querySelector('.review-content');
 
-        //DeleteCardButton
-        this.deteleCard = this.domElement.querySelector('.close-card-button');
-        this.domElement.addEventListener('mouseover', () => {
-            this.deteleCard.style.display = "block";
-        })
-        this.domElement.addEventListener('mouseout', () => {
-            this.deteleCard.style.display = "none";
+		//SUBMIT REVIEW BUTTON
+		this.submitReview = domElement.querySelector('#submitBtn');
 
-        })
-        //console.log(this.deteleCard);
+		this.about = domElement.querySelector('.card-about');
 
-        //EXAPND REVIEW BUTTONS
-        this.expandReview = domElement.querySelector('.button-reviews');
-        this.closeReviews = domElement.querySelector('.review-close');
-        this.contentR = domElement.querySelector('.review-content');
+		this.expandButton.addEventListener('click', () => this.expand());
+		this.closeButton.addEventListener('click', () => this.close());
 
-        //SUBMIT REVIEW BUTTON
-        this.submitReview = domElement.querySelector('#submitBtn');
+		this.expandReview.addEventListener('click', () => this.expandRev());
+		this.closeReviews.addEventListener('click', () => this.closeRev());
 
-        this.about = domElement.querySelector('.card-about');
+		this.submitReview.addEventListener('click', () => this.submitRev());
 
-        this.expandButton.addEventListener('click', () => this.expand());
-        this.closeButton.addEventListener('click', () => this.close())
+		this.deteleCard.addEventListener('click', () => this.deleteCardFunc());
+	}
 
-        this.expandReview.addEventListener('click', () => this.expandRev());
-        this.closeReviews.addEventListener('click', () => this.closeRev());
+	expand() {
+		// books.forEach(item => {
+		//     const cardA = item.querySelector('.card-about');
+		//     cardA.classList.add('card-about-close');
 
-        this.submitReview.addEventListener('click', () => this.submitRev());
+		// })
+		// const card = this.domElement.querySelector('.card-about');
 
-        this.deteleCard.addEventListener('click', () => this.deleteCardFunc())
+		// card.classList.toggle('card-about-close');
 
-    }
+		this.modal.style.display = 'block';
 
-    expand() {
+		this.span.addEventListener('click', () => {
+			this.modal.style.display = 'none';
+		});
 
-        // books.forEach(item => {
-        //     const cardA = item.querySelector('.card-about');
-        //     cardA.classList.add('card-about-close');
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = (event) => {
+			if (event.target === this.modal) {
+				this.modal.style.display = 'none';
+			}
+		};
+	}
+	close() {
+		this.about.classList.toggle('card-about-close');
+	}
 
-        // })
-        // const card = this.domElement.querySelector('.card-about');
+	expandRev() {
+		//console.log('expand');
+		// ======== TODO for later ===============
+		// books.forEach(item=>{
+		//     const contentRev=item.querySelector('.review-Content');
+		//     contentRev.classList.add('review-open')
 
-        // card.classList.toggle('card-about-close');
+		// })
+		const reviewCont = this.domElement.querySelector('.review-content');
+		TweenMax.from(reviewCont, 2, { top: '-20%', ease: Elastic.easeOut });
+		//TweenMax.from(".review-content", 1, {scale:2.4,x:150}, 0);
+		const content = this.domElement.querySelector('.review-content');
+		//console.log(content);
+		content.classList.toggle('review-open');
+	}
+	closeRev() {
+		//console.log('close');
+		this.contentR.classList.toggle('review-open');
+	}
 
-        this.modal.style.display = "block";
+	submitRev() {
+		//console.log('Submited');
+		const nameField = this.domElement.querySelector('#title');
+		const subject = this.domElement.querySelector('#articleText');
+		const reviewDiv = this.domElement.querySelector('.articleForm');
 
-        
-        this.span.addEventListener('click', () => {
-            this.modal.style.display = 'none';
-        })
+		const newDiv = document.createElement('div');
+		newDiv.className = 'review-text';
+		//newDiv.textContent = text;
+		if (subject.value === '') {
+			//alert('Enter a name and a subject');
+			swal('Empty input', 'please enter a name and a subject!');
+		} else reviewDiv.appendChild(newDiv);
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = (event) => {
-            if (event.target === this.modal) {
-                this.modal.style.display = "none";
-            }
-        }
+		const newSpan = document.createElement('span');
+		newSpan.textContent = 'From:';
+		newSpan.className = 'rev-h2';
 
+		const newName = document.createElement('h2');
+		//newName.appendChild(newSpan);
 
-    }
-    close() {
-        this.about.classList.toggle('card-about-close');
-    }
+		newName.className = 'rev-h2';
+		newName.textContent = nameField.value;
+		const newSUbject = document.createElement('p');
+		newSUbject.classList = 'rev-text';
+		newSUbject.textContent = subject.value;
 
-    expandRev() {
-        //console.log('expand');
-        // ======== TODO for later ===============
-        // books.forEach(item=>{
-        //     const contentRev=item.querySelector('.review-Content');
-        //     contentRev.classList.add('review-open')
+		nameField.value = '';
+		subject.value = '';
 
-        // })
-        const reviewCont=this.domElement.querySelector('.review-content')
-        TweenMax.from(reviewCont,2,{ top:'-20%' , ease: Elastic.easeOut })
-        //TweenMax.from(".review-content", 1, {scale:2.4,x:150}, 0);
-        const content = this.domElement.querySelector('.review-content');
-        //console.log(content);
-        content.classList.toggle('review-open');
-    }
-    closeRev() {
-        //console.log('close');
-        this.contentR.classList.toggle('review-open');
-    }
-
-    submitRev() {
-        //console.log('Submited');
-        const nameField = this.domElement.querySelector('#title');
-        const subject = this.domElement.querySelector('#articleText');
-        const reviewDiv = this.domElement.querySelector('.articleForm');
-
-        const newDiv = document.createElement('div');
-        newDiv.className = 'review-text';
-        //newDiv.textContent = text;
-        if(subject.value === ''){
-            //alert('Enter a name and a subject');
-            swal("Empty input", "please enter a name and a subject!");
-        }
-        else
-            reviewDiv.appendChild(newDiv)
-
-        const newSpan = document.createElement('span');
-        newSpan.textContent = "From:";
-        newSpan.className = 'rev-h2';
-
-        const newName = document.createElement('h2');
-        //newName.appendChild(newSpan);
-
-        newName.className = 'rev-h2';
-        newName.textContent = nameField.value;
-        const newSUbject = document.createElement('p');
-        newSUbject.classList = 'rev-text';
-        newSUbject.textContent = subject.value;
-
-        nameField.value = '';
-        subject.value = '';
-
-        newDiv.appendChild(newName);
-        newDiv.appendChild(newSUbject);
-
-    }
-    deleteCardFunc() {
-        console.log('detelecard');
-        this.domElement.style.display = 'none';
-    }
+		newDiv.appendChild(newName);
+		newDiv.appendChild(newSUbject);
+	}
+	deleteCardFunc() {
+		console.log('detelecard');
+		this.domElement.style.display = 'none';
+	}
 }
 
 const books = document.querySelectorAll('.card-holder2');
-books.forEach(item => {
-    return new Book(item);
-})
-
+books.forEach((item) => {
+	return new Book(item);
+});
 
 class Books {
-    constructor() {
-        this.books = document.querySelectorAll('.card-holder');
+	constructor() {
+		this.books = document.querySelectorAll('.card-holder');
 
-        const wish = document.querySelectorAll('.wishlist');
+		const wish = document.querySelectorAll('.wishlist');
 
-        wish.forEach(wishlist => {
-            wishlist.children[0].addEventListener('click', addToFavorites);
-            wishlist.children[1].addEventListener('click', addToFavorites);
-            function addToFavorites() {
-                wishlist.children[0].classList.toggle('card-about-close');
-                wishlist.children[1].classList.toggle('card-about-close');
-            }
-        })
+		wish.forEach((wishlist) => {
+			wishlist.children[0].addEventListener('click', addToFavorites);
+			wishlist.children[1].addEventListener('click', addToFavorites);
+			function addToFavorites() {
+				wishlist.children[0].classList.toggle('card-about-close');
+				wishlist.children[1].classList.toggle('card-about-close');
+			}
+		});
 
-        let num=0;
-        this.books.forEach((item,index) => {
-            item.title = item.querySelector('.content-two').children[0].textContent;
-            item.author = item.querySelector('.content-two').children[1].textContent;
+		let num = 0;
+		this.books.forEach((item, index) => {
+			item.title = item.querySelector('.content-two').children[0].textContent;
+			item.author = item.querySelector('.content-two').children[1].textContent;
 
-            //===========STARS RATING====================\\
-            const stars = item.querySelectorAll('.rate');
-            stars.forEach(starHolder => {
-                //starHolder.className = 'rate' + index;
-                for (let nr = 1; nr <= 5; nr++) {
-                    const star = document.createElement('input');
-                    star.readOnly = true;
-                    star.id = num + nr;
-                    star.name = nr;
-                    star.value = "★ ";
-                    star.style.maxWidth="32px"
-                    star.addEventListener('click', function () {
-                        //debugger;
-                        for (let i = 0; i < starHolder.children.length; i++) {
-                            let idStea = starHolder.children[i].id;
-                            bookStars(star);
-                            if (star.id >= idStea) {
-                                starHolder.children[i].classList.add('full-star');
-                            } else {
-                                starHolder.children[i].classList.remove('full-star');
-                            }
+			//===========STARS RATING====================\\
+			const stars = item.querySelectorAll('.rate');
+			stars.forEach((starHolder) => {
+				//starHolder.className = 'rate' + index;
+				for (let nr = 1; nr <= 5; nr++) {
+					const star = document.createElement('input');
+					star.readOnly = true;
+					star.id = num + nr;
+					star.name = nr;
+					star.value = '★ ';
+					star.style.maxWidth = '32px';
+					star.addEventListener('click', function() {
+						//debugger;
+						// for (let i = 0; i < starHolder.children.length; i++) {
+						//     let idStea = starHolder.children[i].id;
+						//     bookStars(star);
+						//     if (star.id >= idStea) {
+						//         starHolder.children[i].classList.add('full-star');
+						//     } else {
+						//         starHolder.children[i].classList.remove('full-star');
+						//     }
 
-                        };
-                    });
+						// };
 
-                    starHolder.appendChild(star);
-                }
-                num = num + 5;
-                //console.log(starHolder);
-            });
+						//filter
+						const allStarsArray = Array.from(starHolder.children);
+						//console.log(allStarsArray);
+						allStarsArray.filter((starInArray, index) => {
+							//console.log(index);
+							bookStars(star);
+							if (Number(star.id) >= Number(starInArray.id)) {
+								starHolder.children[index].classList.add('full-star');
+								//console.log(starInArray.id);
+							} else starHolder.children[index].classList.remove('full-star');
+							//console.log("nada");
+						});
+					});
 
-            function bookStars(stele) {
-                item.stars = stele.name;
+					starHolder.appendChild(star);
+				}
+				num = num + 5;
+				//console.log(starHolder);
+			});
 
-                const rating = item.querySelector('#ratings');
-                rating.value = '★'.repeat(stele.name);
-                rating.style.color = 'yellow';
-            }
-            //console.log(stars);
+			function bookStars(stele) {
+				item.stars = stele.name;
 
-        })
-    }
+				const rating = item.querySelector('#ratings');
+				rating.value = '★'.repeat(stele.name);
+				rating.style.color = 'yellow';
+			}
+			//console.log(stars);
+
+			const libraries = item.querySelectorAll('.choose-buyer');
+
+			libraries.forEach((libraryHolder) => {
+				const bookstores = document.createElement('select');
+
+				for (let i = 0; i < 4; i++) {
+					let bookstore = document.createElement('option');
+					bookstores.appendChild(bookstore);
+				}
+
+				bookstores.children[0].textContent = 'AMAZON';
+				bookstores.children[1].textContent = 'Melbourne';
+				bookstores.children[2].textContent = 'Cromwell';
+				bookstores.children[3].textContent = 'Queenstown';
+
+				const price = document.createElement('input');
+				price.id = 'price';
+				price.readOnly = true;
+				price.value = '$12.45';
+				price.style.width = '60px';
+				price.style.border = 'none';
+				price.style.backgroundColor = 'transparent';
+				price.style.margin = '4px';
+				price.style.paddingRight = '10px';
+				price.style.marginLeft = '10px';
+				price.style.fontFamily = "'Raleway', sans-serif";
+
+				bookstores.addEventListener('change', function() {
+					const bookstoreSelected = bookstores.value;
+					if (bookstoreSelected == 'AMAZON') {
+						price.value = '$14.45';
+					} else if (bookstoreSelected == 'Melbourne') {
+						price.value = '$13';
+					} else if (bookstoreSelected == 'Cromwell') {
+						price.value = '$15';
+					} else if (bookstoreSelected == 'Queenstown') {
+						price.value = '$11';
+					}
+				});
+
+				libraryHolder.appendChild(bookstores);
+				libraryHolder.appendChild(price);
+			});
+		});
+	}
 }
 
 const allBooks = new Books();
@@ -218,51 +262,47 @@ const allBooks = new Books();
 
 const dataList = document.querySelector('#booksName');
 
-allBooks.books.forEach(item => {
-    //console.log(item);
-    const option = document.createElement('option');
-    option.value = item.title + ' ' + item.author;
-    dataList.append(option);
-    //if()
-})
+allBooks.books.forEach((item) => {
+	//console.log(item);
+	const option = document.createElement('option');
+	option.value = item.title + ' ' + item.author;
+	dataList.append(option);
+	//if()
+});
 
 function showBooks() {
-    const chosenBook = document.querySelector('#search');
-    const chosenBookDescription = chosenBook.value;
+	const chosenBook = document.querySelector('#search');
+	const chosenBookDescription = chosenBook.value;
 
-    allBooks.books.forEach(book => {
-        //console.log(book.title+' '+book.author+' INPUT VALUE:'+chosenBookDescription);
-        const bookCompleteDescription = book.title + ' ' + book.author;
-        if (book.title.includes(chosenBookDescription) || book.author.includes(chosenBookDescription) || bookCompleteDescription.includes(chosenBookDescription)) {
-            book.classList.remove('card-about-close');
-        } else {
-            book.classList.add('card-about-close');
-        }
-    })
+	allBooks.books.forEach((book) => {
+		//console.log(book.title+' '+book.author+' INPUT VALUE:'+chosenBookDescription);
+		const bookCompleteDescription = book.title + ' ' + book.author;
+		if (
+			book.title.includes(chosenBookDescription) ||
+			book.author.includes(chosenBookDescription) ||
+			bookCompleteDescription.includes(chosenBookDescription)
+		) {
+			book.classList.remove('card-about-close');
+		} else {
+			book.classList.add('card-about-close');
+		}
+	});
 }
-
-
 
 //===============================GASP ANIMATION CREATE TIMELINE FOR LOAD PAGE======
 
-TweenMax.from('.nav-content',4,{opacity:0});
-TweenMax.from('#headerImg',6,{opacity:0})
-TweenMax.from('.search-content',3,{scale:0,opacity:0});
+TweenMax.from('.nav-content', 4, { opacity: 0 });
+TweenMax.from('#headerImg', 6, { opacity: 0 });
+TweenMax.from('.search-content', 3, { scale: 0, opacity: 0 });
 //TweenMax.from('.card-holder',3,{x:-200,rotation:-160,scale:0,zIndex:0})
 
-const buttonOverview=document.querySelectorAll(' .button-overview').forEach(item=>{
-    item.addEventListener('mouseover',function(){
-        TweenMax.to(item,1,{width:'60px'})
-        item.textContent='INFO';
-    })
-    item.addEventListener('mouseout',function(){
-        TweenMax.to(item,1,{width:'20px'})
-        item.textContent='I N F O'
-    })
-})
-
-
-
-
-
-
+const buttonOverview = document.querySelectorAll(' .button-overview').forEach((item) => {
+	item.addEventListener('mouseover', function() {
+		TweenMax.to(item, 1, { width: '60px' });
+		item.textContent = 'INFO';
+	});
+	item.addEventListener('mouseout', function() {
+		TweenMax.to(item, 1, { width: '20px' });
+		item.textContent = 'I N F O';
+	});
+});
